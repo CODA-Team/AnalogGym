@@ -38,9 +38,18 @@ To appear.
 
 
 
-
-<img src="./docs/images/logos/fudan.png" alt="fudan_logo" width="200"/>
-<img src="./docs/images/logos/uestc.png" alt="uestc_logo" width="200"/>
-<img src="./docs/images/logos/seu.png" alt="seu_logo" width="200"/>
-<img src="./docs/images/logos/gzu.png" alt="gzu_logo" width="200"/>
+<div class="row">
+  <div class="column">
+    <img src="./docs/images/logos/fudan.png" alt="fudan_logo" width="22%"/>
+  </div>
+  <div class="column">
+    <img src="./docs/images/logos/uestc.png" alt="uestc_logo" width="22%"/>
+  </div>
+  <div class="column">
+    <img src="./docs/images/logos/seu.png" alt="seu_logo" width="22%"/>
+  </div>
+  <div class="column">
+    <img src="./docs/images/logos/gzu.png" alt="gzu_logo" width="22%"/>
+  </div>
+</div>
 
