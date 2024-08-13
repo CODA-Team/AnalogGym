@@ -29,12 +29,10 @@ Detailed documentations can be found in [doc](https://coda-team.github.io/Analog
 
 ## **Other Links**
 
-Please cite us if you find AnalogGym useful
+Please cite us if you find AnalogGym useful.
 
-AnalogGym: An Open and Practical Testing Suite for Analog Circuit Synthesis \
-Jintao Li, Haochang Zhi, Ruiyu Lyu, Wangzhen Li, Zhaori Bi<sup>\*</sup>, Keren Zhu<sup>\*</sup>, Yanhan Zhen， Weiwei Shan, Changhao Yan, Fan Yang, Yun Li<sup>\*</sup>, and Xuan Zeng<sup>\*</sup> \
-IEEE/ACM International Conference on Computer-Aided Design (ICCAD '24), October 27--31, 2024, New York, NY, USA \
-To appear.
+- AnalogGym: An Open and Practical Testing Suite for Analog Circuit Synthesis, Jintao Li, Haochang Zhi, Ruiyu Lyu, Wangzhen Li, Zhaori Bi<sup>\*</sup>, Keren Zhu<sup>\*</sup>, Yanhan Zhen， Weiwei Shan, Changhao Yan, Fan Yang, Yun Li<sup>\*</sup>, and Xuan Zeng<sup>\*</sup> IEEE/ACM International Conference on Computer-Aided Design (ICCAD '24), October 27--31, 2024, New York, NY, USA  (To appear)
+
 
 
 
