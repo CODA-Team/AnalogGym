@@ -16,17 +16,28 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 
 <font color="red">Write a simple "out-of-box" run example here. Maybe a Docker container.</font>
 
-## Use 
+## AnalogGym Contents
 
+The test circuits provided in AnalogGym include:
+
+- `netlist` folder: Contains pre-packaged circuit files that require no modification.
+- `testbench` folder: Includes testbench files for running simulations with the simulator.
+- `design variables` folder: Stores the input parameters for each circuit separately.
+- `schematic` folder: Provides circuit diagrams for reference and visualization.
+
+## Use 
 
 <font color="red">Write some simple table of contents here. Like how to set up simulators. How to use commercial tools, PDK, etc. Refer the readers to the corresponding doc</font>
 
-
 Overview of the components required for using AnalogGym:
 
-For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
+- [How to configure and run different circuits using the `testbench`](https://coda-team.github.io/AnalogGym/)
+- [How to extract performance metrics from the simulation output files](https://coda-team.github.io/AnalogGym/)
+- [How to invoke the simulator and key tips for running simulations](https://coda-team.github.io/AnalogGym/)
 
-Detailed documentations can be found in [doc](https://coda-team.github.io/AnalogGym/)
+
+- For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
+- Detailed documentations can be found in [doc](https://coda-team.github.io/AnalogGym/)
 
 
 
