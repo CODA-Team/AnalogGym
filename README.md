@@ -21,6 +21,8 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 
 <font color="red">Write some simple table of contents here. Like how to set up simulators. How to use commercial tools, PDK, etc. Refer the readers to the corresponding doc</font>
 
+For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
+
 Detailed documentations can be found in [doc](https://coda-team.github.io/AnalogGym/)
 
 
