@@ -1,0 +1,75 @@
+Test OpAmp Tran
+
+*.OPTIONS RELTOL=.0001
+***************************************
+* Step 1: Replace circuit netlist here.
+*************************************** 
+.include ./path_to_spice_netlist/HoiLee_AFFC_Pin_3
+.include ./path_to_spice_parameter/HoiLee_AFFC_Pin_3
+
+
+*.include ./mosfet_model/modelcard.nmos
+*.include ./mosfet_model/modelcard.pmos
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+
+.include ./mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical__lin.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\corners\tt\specialized_cells.spice
+
+
+.PARAM supply_voltage = 1.8
+.PARAM VCM_ratio = 0.4
+.PARAM PARAM_CLOAD =100.00p 
+.PARAM val0 = 3.000000e-01
+.PARAM val1 = 5.000000e-01
+.PARAM GBW_ideal = 5e4
+.PARAM STEP_TIME = '10/GBW_ideal'
+.PARAM TRAN_SIM_TIME = '20/GBW_ideal + 1e-6'
+
+
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+* Circuit List:
+* Leung_NMCNR_Pin_3
+* Leung_NMCF_Pin_3
+* Leung_DFCFC1_Pin_3
+* Leung_DFCFC2_Pin_3
+
+* XOP gnda vdda vinn vinp vout
+*        |  |     |     |   |
+*        |  |     |     |   Output
+*        |  |     |     Non-inverting Input
+*        |  |      Inverting Input
+*        |  Positive Supply
+*        Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Leung_NMCNR_Pin_3 -> Leung_NMCF_Pin_3
+*************************************** 
+*Transient  TB  
+VVISR visr 0 pulse('val0' 'val1' 1u 1p 1p '1*STEP_TIME' 1)
+xop6 vss vdd vout3 visr vout3 Leung_NMCNR_Pin_3
+CLoad6 vout3 0 'PARAM_CLOAD'
+
+.meas tran t_rise_edge when v(vout3)=0.4 rise=1
+.meas tran t_rise param='t_rise_edge-1u'
+.meas tran sr_rise param='0.1/t_rise'
+
+.meas tran t_fall_edge when v(vout3)=0.4 fall=1
+.meas tran t_fall param='t_fall_edge-1u-STEP_TIME'
+.meas tran sr_fall param='0.1/t_fall'
+
+.control
+
+tran 1u 4.01e-4
+plot v(visr) v(vout3)
+write tran.dat v(vout3)
+.endc
+
+.end

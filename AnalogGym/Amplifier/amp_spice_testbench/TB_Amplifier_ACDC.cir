@@ -1,0 +1,97 @@
+Test OpAmp ACDC
+
+***************************************
+* Step 1: Replace circuit netlist and parameter here.
+***************************************
+.include ./path_to_spice_netlist/HoiLee_AFFC_Pin_3
+.include ./path_to_spice_parameter/HoiLee_AFFC_Pin_3
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+
+.include ./mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical__lin.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\corners\tt\specialized_cells.spice
+
+
+.PARAM supply_voltage = 1.98
+.PARAM VCM_ratio = 0.25
+.PARAM PARAM_CLOAD =500.00p 
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+Vindc opin 0 'supply_voltage*VCM_ratio'
+Vin signal_in 0 dc 'supply_voltage*VCM_ratio' ac 1 sin('supply_voltage*VCM_ratio' 100m 500)
+
+Lfb opout opout_dc 1T
+Cin opout_dc signal_in 1T
+
+* XOP gnda vdda vinn vinp vout
+*        |  |     |     |   |
+*        |  |     |     |   Output
+*        |  |     |     Non-inverting Input
+*        |  |      Inverting Input
+*        |  Positive Supply
+*        Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Leung_NMCNR_Pin_3 -> Leung_NMCF_Pin_3
+*************************************** 
+*    ADM TB   
+Xop1 vss vdd opout_dc opin opout  HoiLee_AFFC_Pin_3
+Cload1 opout 0 'PARAM_CLOAD'
+
+*   ACM TB    
+xop2 vss vdd cm2 cm1 cm3  HoiLee_AFFC_Pin_3
+Cload2 cm3 0 'PARAM_CLOAD'
+vcmdc cm0 0 'supply_voltage*VCM_ratio'
+vcmac1 cm1 cm0 0 ac=1
+vcmac2 cm2 cm3 0 ac=1
+.meas ac cmrrdc find vdb(cm3) at = 0.1 
+.meas ac dcgain find vdb(opout) at = 0.1
+.meas ac gain_bandwidth_product when vdb(opout)=0
+.meas ac phase_in_rad find vp(opout) when vdb(opout)=0
+.meas ac phase_in_deg param='phase_in_rad*180/3.1416'
+
+* PSRR   TB   
+VGNDApsrr gndpsrr 0 0 AC=1
+VVDDApsrr vddpsrr 0 'supply_voltage'  AC=1
+xop3 vss vddpsrr ppsr1 opin ppsr1  HoiLee_AFFC_Pin_3
+Cload3 ppsr1 0 'PARAM_CLOAD'
+xop4 gndpsrr vdd npsr1 opin npsr1  HoiLee_AFFC_Pin_3
+Cload4 npsr1 0 'PARAM_CLOAD'
+.measure ac DCPSRp find vdb(ppsr1) at = 0.1
+.measure ac DCPSRn find vdb(npsr1) at = 0.1
+
+* DC ALL  TB  
+VVDDdc VDDdc 0 'supply_voltage' 
+xop5 vss vdddc vout6 opin vout6  HoiLee_AFFC_Pin_3
+Cload5 vout6 0 'PARAM_CLOAD'
+* TC meas   
+.measure dc maxval MAX V(vout6) from=-40 to=125
+.measure dc minval MIN V(vout6) from=-40 to=125
+.measure dc avgval AVG V(vout6) from=-40 to=125
+.measure dc ppavl  PP V(vout6) from=-40 to=125
+.measure dc TC param='ppavl/avgval/165'
+* Power meas   
+.meas dc Ivdd25 FIND I(VVDDDC) AT=25
+.meas dc Power param='-1*Ivdd25*supply_voltage'
+*   Vos.meas   
+.meas dc vout25 FIND V(vout6) AT=25
+.meas dc vos25 param = 'vout25-supply_voltage*VCM_ratio'
+
+.control
+
+DC temp -40 125 0.1
+plot v(vout6)
+
+ac dec 10 0.1 1G
+plot vdb(opout) vdb(cm3) vdb(ppsr1) vdb(npsr1)
+plot vp(opout)
+
+.endc
+
+.end

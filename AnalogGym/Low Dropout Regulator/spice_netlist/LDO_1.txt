@@ -1,0 +1,30 @@
+.subckt Basic_LDO gnda vdda vinn vout vddp vfb vinp
+xm24 net1 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos           
+xm0 net116 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos          
+xm1 vb4 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos             
+xm2 dm_1 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos            
+xm3 vb3 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos             
+xm4 net20 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m='2*mosfet_0_8_m_biascm_pmos'       
+xm8 dm_2 vinp net20 net20 sky130_fd_pr__pfet_01v8 l=mosfet_8_2_l_gm1_pmos w='mosfet_8_2_w_gm1_pmos*1' m=mosfet_8_2_m_gm1_pmos                     
+xm9 net106 vinn net20 net20 sky130_fd_pr__pfet_01v8 l=mosfet_8_2_l_gm1_pmos w='mosfet_8_2_w_gm1_pmos*1' m=mosfet_8_2_m_gm1_pmos                   
+xm5 voutn voutn vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos            
+xm6 net10 voutn vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos            
+xm10 net12 net10 net1 net1 sky130_fd_pr__pfet_01v8 l=mosfet_10_1_l_gm2_pmos w='mosfet_10_1_w_gm2_pmos*1' m=mosfet_10_1_m_gm2_pmos                 
+xm7 net7 net116 vdda vdda sky130_fd_pr__pfet_01v8 l=mosfet_0_8_l_biascm_pmos w='mosfet_0_8_w_biascm_pmos*1' m=mosfet_0_8_m_biascm_pmos            
+xm11 vout net1 vddp vddp sky130_fd_pr__pfet_01v8 l=mosfet_11_1_l_power_pmos w='mosfet_11_1_w_power_pmos*1' m=mosfet_11_1_m_power_pmos             
+xm13 dm_1 vb3 net31 gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'      
+xm18 net31 vb4 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'      
+xm12 vb4 vb3 net28 gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'       
+xm14 vb3 vb3 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m=mosfet_17_7_m_biascm_nmos            
+xm17 net28 vb4 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'      
+xm16 net10 vb3 net106 gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'   
+xm20 net106 vb4 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*8'     
+xm15 voutn vb3 dm_2 gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*4'      
+xm19 dm_2 vb4 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_17_7_l_biascm_nmos w='mosfet_17_7_w_biascm_nmos*1' m='mosfet_17_7_m_biascm_nmos*8'       
+xm21 net12 net7 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_21_2_l_load2_nmos w='mosfet_21_2_w_load2_nmos*1' m=mosfet_21_2_m_load2_nmos            
+xm22 net7 net7 gnda gnda sky130_fd_pr__nfet_01v8 l=mosfet_21_2_l_load2_nmos w='mosfet_21_2_w_load2_nmos*1' m=mosfet_21_2_m_load2_nmos             
+i0 net116 gnda DC='current_0_bias'
+r1 vout vfb 300e3
+r0 vfb gnda 100e3
+c0 net106 vout 'capacitor_0'
+.ends Basic_LDO
