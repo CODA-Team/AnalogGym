@@ -31,7 +31,7 @@ The test circuits provided in AnalogGym include:
 
 Overview of the components required for using AnalogGym:
 
-- [How to configure and run different circuits using the `testbench`](https://coda-team.github.io/AnalogGym/)
+- [How to configure and run different circuits via testbench](https://coda-team.github.io/AnalogGym/)
 - [How to extract performance metrics from the simulation output files](https://coda-team.github.io/AnalogGym/)
 - [How to invoke the simulator and key tips for running simulations](https://coda-team.github.io/AnalogGym/)
 
