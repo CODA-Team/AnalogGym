@@ -1,0 +1,97 @@
+Test LDO ACDC
+
+*.OPTIONS RELTOL=.0001
+***************************************
+* Step 1: Replace circuit netlist here.
+*************************************** 
+.include ./ldo_spice_netlist/LDO_1.txt
+.include ./ldo_spice_parameter/LDO_1.txt
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+
+.include ./mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\r+c\res_typical__cap_typical__lin.spice
+*.include.\mosfet_model\sky130_pdk\libs.tech\ngspice\corners\tt\specialized_cells.spice
+
+
+.PARAM supply_voltage = 1.8
+.PARAM Vref = 0.4
+.PARAM PARAM_CLOAD =100.00p 
+.PARAM PARAM_ILOAD =10m 
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+Vindc vref_in 0 'Vref'
+Vin signal_in 0 dc 'Vref' ac 1 sin('Vref' 100m 500)
+
+* Circuit List:
+* Basic_LDO
+
+
+* XLDO gnda vdda vinn vout vddp vfb vinp
+*        |  |     |     |   |    |   |
+*        |  |     |     |   |    |   Non-inverting input
+*        |  |     |     |   |    Feedback voltage 
+*        |  |     |     |   Supply of the Power transistor
+*        |  |     |     Output
+*        |  |      Inverting Input
+*        |  Positive Supply
+*        Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Basic_LDO -> DFCFC_LDO
+*************************************** 
+*    ADM TB   
+Xldo1 vss vdd vref_in vout1 vdd vfb1 vinp1 Basic_LDO
+Lfb vinp1 vfb1 1T
+Cfb vinp1 signal_in 1T
+Cload1 vout1 0 'PARAM_CLOAD'
+Iload1 vout1 0 'PARAM_ILOAD'
+.meas ac dcgain find vdb(vout1) at = 0.1
+.meas ac gain_bandwidth_product when vdb(vout1)=0
+.meas ac phase_in_rad find vp(vout1) when vdb(vout1)=0
+.meas ac phase_in_deg param='phase_in_rad*180/3.1416'
+
+* PSRR   TB   
+VVDDApsrr vddpsrr 0 'supply_voltage'  AC=1
+xop2 vss vddpsrr vref_in ppsr1 vddpsrr vfb2 vfb2 Basic_LDO
+Cload2 ppsr1 0 'PARAM_CLOAD'
+Iload2 ppsr1 0 'PARAM_ILOAD'
+.measure ac DCPSRp find vdb(ppsr1) at = 0.1
+
+* DC ALL  TB  
+VVDDdc VDDdc 0 'supply_voltage' 
+VVDDdc2 vddpass 0 'supply_voltage' 
+xop3 vss vdddc vref_in vout6 vddpass vfb3 vfb3 Basic_LDO
+Cload3 vout6 0 'PARAM_CLOAD'
+Iload3 vout6 0 'PARAM_ILOAD'
+
+* LR meas   
+.measure dc maxval MAX V(vout6) from=5m to=55m
+.measure dc minval MIN V(vout6) from=5m to=55m
+.measure dc avgval AVG V(vout6) from=5m to=55m
+.measure dc ppavl  PP V(vout6) from=5m to=55m
+.measure dc LR param='ppavl/avgval/50m'
+* Power meas   
+.meas dc Ivdd FIND I(VVDDDC) AT=55m
+.meas dc Power param='-1*Ivdd*supply_voltage'
+*   Vos.meas   
+.meas dc vout FIND V(vout6) AT=55m
+.meas dc vos param = 'vout-4*Vref'
+
+.control
+
+DC Iload3 5m 55m 0.1m
+plot v(vout6)
+
+ac dec 10 0.1 1G
+plot vdb(vout1) vdb(ppsr1)
+plot vp(vout1)
+
+.endc
+
+.end
