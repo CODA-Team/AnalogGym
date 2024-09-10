@@ -31,9 +31,15 @@ The test circuits provided in AnalogGym include:
 
 ## Usage
 
-<font color="red">Write some simple table of contents here. Like how to set up simulators. How to use commercial tools, PDK, etc. Refer the readers to the corresponding doc</font>
-
 Note that in the sky130 process library, transistors have a drain-source breakdown voltage of 1.8V and a threshold voltage of 1V. Consequently, the supply voltage is maintained at 1.8V, rather than being reduced to 1.2V, to meet the required reliability and operational standards.
+
+### Workflow in AnalogGym
+
+<img width="879" alt="AnalogGym_Flow" src="https://github.com/user-attachments/assets/2e06e4cc-7042-42c1-a395-9157f3677d56">
+
+The design flow decouples circuit configuration from the optimization process, allowing for flexible parameter tuning. 
+The circuit parameters are maintained in independent configuration files in the `design variables` folder.
+Different netlists can be switched in the testbench, with each netlist representing an encapsulated circuit.
 
 Overview of the components required for using AnalogGym:
 
