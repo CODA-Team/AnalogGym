@@ -16,11 +16,11 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 - [Usage](#Usage)
 - [Citation](#Citation)
 
-## Getting Started <h1 id="Getting_Started"></h1>
+## <h1 id="Getting_Started">Getting Started</h1>
 
 <font color="red">Write a simple "out-of-box" run example here. Maybe a Docker container.</font>
 
-## AnalogGym Contents <h2 id="AnalogGym_Contents"></h2>
+## <h2 id="AnalogGym_Contents">AnalogGym Contents</h2>
 
 The test circuits provided in AnalogGym include:
 
