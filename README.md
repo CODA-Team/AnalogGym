@@ -16,12 +16,12 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 - [Usage](#Usage)
 - [Citation](#Citation)
 
-## Getting Started
-<h1 id="Getting_Started"></h1>
+## Getting Started <h1 id="Getting_Started"></h1>
+
 <font color="red">Write a simple "out-of-box" run example here. Maybe a Docker container.</font>
 
-## AnalogGym Contents
-<h2 id="AnalogGym_Contents"></h2>
+## AnalogGym Contents <h2 id="AnalogGym_Contents"></h2>
+
 The test circuits provided in AnalogGym include:
 
 - `netlist` folder: Contains pre-packaged circuit files that require no modification.
