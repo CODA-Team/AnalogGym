@@ -11,7 +11,10 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 
 ## Table of Contents
 
-- [AnalogGym](#AnalogGym)
+- [Getting Started](#Getting Started)
+- [AnalogGym Contents](#AnalogGym Contents)
+- [Usage](#Usage)
+- [Citation](#Citation)
 
 ## Getting Started
 
@@ -27,7 +30,7 @@ The test circuits provided in AnalogGym include:
 - `design variables` folder: Stores the input parameters for each circuit separately.
 - `schematic` folder: Provides circuit diagrams for reference and visualization.
 
-## Use 
+## Usage
 
 <font color="red">Write some simple table of contents here. Like how to set up simulators. How to use commercial tools, PDK, etc. Refer the readers to the corresponding doc</font>
 
@@ -46,7 +49,7 @@ Overview of the components required for using AnalogGym:
 
 
 
-## **Other Links**
+## **Citation**
 
 Please cite us if you find AnalogGym useful.
 
