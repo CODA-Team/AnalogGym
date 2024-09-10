@@ -9,7 +9,9 @@ This repository is the analog circuit synthesis testing suite, **AnalogGym**.
 AnalogGym encompasses 30 circuit topologies in five key categories: sensing front ends, voltage references, AMPs, low dropout regulators (LDOs), and phase-locked loops (PLLs). 
 Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice.sourceforge.io/) simulator and the [SkyWater](https://github.com/google/skywater-pdk)  process design kit (PDK), allowing for greater accessibility and reproducibility. 
 
+## Table of Contents
 
+[TOC]
 
 ## Getting Started
 
