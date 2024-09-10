@@ -11,7 +11,9 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 
 ## Table of Contents
 
-[TOC]
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Getting Started
 
