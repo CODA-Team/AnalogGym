@@ -41,6 +41,19 @@ The design flow decouples circuit configuration from the optimization process, a
 The circuit parameters are maintained in independent configuration files in the `design variables` folder.
 Different netlists can be switched in the testbench, with each netlist representing an encapsulated circuit.
 
+### Testbench
+
+| Line | Ngspice Testbench Description |
+|------|------------------------------------------------------------|
+| 1    | `.include ./path_to_spice_netlist/circuit_name`  — *Include the SPICE netlist* |
+| 2    | `.include ./path_to_decision_variable/circuit_name` — *Include the circuit parameters (decision variables)* |
+| 3    | `.include ./mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice` — *Include PDK, modify Process in PVT* |
+| 4    | `.PARAM supply_voltage = 1.3` — *Specify supply voltage for PVT* |
+| 5    | `.temp 27` — *Specify temperature for PVT* |
+| 6    | `.PARAM PARAM_CLOAD = 10p` — *Specify load capacitance* |
+| ...  | *Simulation commands; no modifications required.* |
+
+
 Overview of the components required for using AnalogGym:
 
 - [How to configure and run different circuits via testbench](https://coda-team.github.io/AnalogGym/)
