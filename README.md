@@ -16,7 +16,7 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 - [Usage](#Usage)
 - [Citation](#Citation)
 
-<h1 id="Getting_Started">Getting Started</h1>
+<h2 id="Getting_Started">Getting Started</h2>
 
 <font color="red">Write a simple "out-of-box" run example here. Maybe a Docker container.</font>
 
