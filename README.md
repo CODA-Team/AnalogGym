@@ -1,7 +1,5 @@
 # **AnalogGym**
 
-(Under Construction)
-
 ## About AnalogGym
 
 This repository is the analog circuit synthesis testing suite, **AnalogGym**.
