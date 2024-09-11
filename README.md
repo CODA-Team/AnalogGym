@@ -31,7 +31,7 @@ The test circuits provided in AnalogGym include:
 
 ## Usage
 
-Note that in the sky130 process library, transistors have a drain-source breakdown voltage of 1.8V and a threshold voltage of 1V. Consequently, the supply voltage is maintained at 1.8V, rather than being reduced to 1.2V, to meet the required reliability and operational standards.
+Note that in the sky130 PDK, transistors have a drain-source breakdown voltage of 1.8V and a threshold voltage of 1V. Consequently, the supply voltage is maintained at 1.8V, rather than being reduced to 1.2V, to meet the required reliability and operational standards.
 
 ### Workflow in AnalogGym
 
@@ -65,7 +65,7 @@ For the simulation setup and execution, you can check the following scripts:
 ### Additional Resources
 
 - For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
-- Detailed documentations can be found in [doc](https://coda-team.github.io/AnalogGym/)
+- Detailed documentation can be found in [doc](https://coda-team.github.io/AnalogGym/)
 
 
 
