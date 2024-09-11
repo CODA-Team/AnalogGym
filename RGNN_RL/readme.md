@@ -1,7 +1,8 @@
 # **Examples of using the AnalogGym with the [relational graph neural network and reinforcement learning algorithm](https://github.com/ChrisZonghaoLi/sky130_ldo_rl)**
+
 ## Simulation
 
-To understand how the simulations are set up and executed, you can refer to the following scripts:
+For the simulation setup and execution, you can check the following scripts:
 
 - For the **Amplifier** simulation, refer to [main_AMP.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py).
 
