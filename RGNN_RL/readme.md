@@ -1,5 +1,5 @@
 # **Examples of using the AnalogGym with the [relational graph neural network and reinforcement learning algorithm](https://github.com/ChrisZonghaoLi/sky130_ldo_rl)**
-## Simulation Reference
+## Simulation
 
 To understand how the simulations are set up and executed, you can refer to the following scripts:
 
