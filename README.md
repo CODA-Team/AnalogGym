@@ -18,7 +18,7 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 
 <h2 id="Getting_Started">Getting Started</h2>
 
-Examples of using the AnalogGym with the Relational Graph Neural Network and Reinforcement Learning algorithm[^1], referencing [this repository](https://github.com/ChrisZonghaoLi/sky130_ldo_rl).
+Examples of using the AnalogGym with the relational graph neural network and reinforcement learning algorithm[^1], referencing [this repository](https://github.com/ChrisZonghaoLi/sky130_ldo_rl). A Docker version is provided, along with a downloadable code package that can be run locally.
 
 [^1]: Z. Li and A. C. Carusone, "Design and Optimization of Low-Dropout Voltage Regulator Using Relational Graph Neural Network and Reinforcement Learning in Open-Source SKY130 Process," 2023 IEEE/ACM International Conference on Computer Aided Design (ICCAD), San Francisco, CA, USA, 2023, pp. 01-09, doi: 10.1109/ICCAD57390.2023.10323720.
 
