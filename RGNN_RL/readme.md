@@ -41,4 +41,3 @@ To replace the older version, navigate to the following directory (assuming the 
 /Anaconda/envs/analoggym-env/Library/bin
 ```
 Overwrite the old `ngspice.exe` with the newer version. Ensure that the `analoggym-env` environment meets all requirements in `environment.yml`.
-```
