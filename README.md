@@ -55,13 +55,16 @@ Different netlists can be switched in the testbench, with each netlist represent
 | 6    | `.PARAM PARAM_CLOAD = 10p` — *Specify load capacitance* |
 | ...  | *Simulation commands; no modifications required.* |
 
+### Simulation
 
-Overview of the components required for using AnalogGym:
+For the simulation setup and execution, you can check the following scripts:
 
-- [How to configure and run different circuits via testbench](https://coda-team.github.io/AnalogGym/)
-- [How to extract performance metrics from the simulation output files](https://coda-team.github.io/AnalogGym/)
-- [How to invoke the simulator and key tips for running simulations](https://coda-team.github.io/AnalogGym/)
+- For the **Amplifier** simulation, refer to [main_AMP.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py).
+- For the **LDO** simulation, refer to [main_LDO.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_LDO.py).
 
+
+
+### Additional Resources
 
 - For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
 - Detailed documentations can be found in [doc](https://coda-team.github.io/AnalogGym/)
