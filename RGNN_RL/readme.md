@@ -1,18 +1,13 @@
-# Simulation Reference
+# **Examples of using the AnalogGym with the [relational graph neural network and reinforcement learning algorithm](https://github.com/ChrisZonghaoLi/sky130_ldo_rl)**
+## Simulation Reference
 
 To understand how the simulations are set up and executed, you can refer to the following scripts:
 
-- For the **Amplifier** simulation, refer to:
+- For the **Amplifier** simulation, refer to [main_AMP.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py).
 
-  ```bash
-  main_AMP.py
-  ```
 
-- For the **LDO** (Low-Dropout Regulator) simulation, refer to:
+- For the **LDO** simulation, refer to [main_LDO.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_LDO.py).
 
-  ```bash
-  main_LDO.py
-  ```
 
 These scripts provide detailed examples of how the simulations are run, including the optimization process for each circuit.
 
@@ -45,6 +40,5 @@ To replace the older version, navigate to the following directory (assuming the 
 ```bash
 /Anaconda/envs/analoggym-env/Library/bin
 ```
-
-Overwrite the old `ngspice.exe` with the newer version. Ensure that the `analoggym-env` environment meets all requirements listed in `environment.yml`.
+Overwrite the old `ngspice.exe` with the newer version. Ensure that the `analoggym-env` environment meets all requirements in `environment.yml`.
 ```
