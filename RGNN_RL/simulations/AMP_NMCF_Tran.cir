@@ -1,0 +1,83 @@
+Test OpAmp Tran
+
+*.OPTIONS RELTOL=.0001
+***************************************
+* Step 1: Replace circuit netlist here.
+*************************************** 
+.include ../simulations/NMCF_Pin_3_HSPICE_130.txt
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+***************************************
+* Step 2: Replace circuit param.  here.
+*************************************** 
+.PARAM supply_voltage = 1.8
+.PARAM VCM_ratio = 0.4
+.PARAM PARAM_CLOAD =10.00p 
+.PARAM val0 = 3.000000e-01
+.PARAM val1 = 5.000000e-01
+.PARAM GBW_ideal = 5e4
+.PARAM STEP_TIME = '10/GBW_ideal'
+.PARAM TRAN_SIM_TIME = '20/GBW_ideal + 1e-6'
+
+.include ../simulations/AMP_NMCF_vars.spice
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+* Circuit List:
+* Leung_NMCNR_Pin_3
+* Leung_NMCF_Pin_3
+* Leung_DFCFC1_Pin_3
+* Leung_DFCFC2_Pin_3
+
+* XOP gnda vdda vinn vinp vout
+*        |  |     |     |   |
+*        |  |     |     |   Output
+*        |  |     |     Non-inverting Input
+*        |  |      Inverting Input
+*        |  Positive Supply
+*        Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Leung_NMCNR_Pin_3 -> Leung_NMCF_Pin_3
+*************************************** 
+* Transient  TB
+Ib Ib gnda DC='current_0_bias'  
+VVISR visr 0 pulse('val0' 'val1' 1u 1p 1p '1*STEP_TIME' 1)
+x1 vss vdd vout3 visr vout3 Ib Leung_NMCF_Pin_3
+CLoad6 vout3 0 'PARAM_CLOAD'
+
+.control
+save all
+.options savecurrents 
+set filetype=ascii
+set units=degrees
+
+tran 1u 4.01e-4
+meas tran t_rise_edge when v(vout3)=0.4 rise=1
+let t_rise = t_rise_edge-1u
+let sr_rise = 0.1/t_rise
+print t_rise
+print sr_rise
+meas tran t_fall_edge when v(vout3)=0.4 fall=1
+let t_fall = t_fall_edge - 1u - 10/5e4 
+let sr_fall = 0.1/t_fall
+print t_fall
+print sr_fall
+wrdata AMP_NMCF_Tran sr_rise sr_fall
+plot v(visr) v(vout3)
+write tran.dat v(vout3) v(visr)
+
+* OP
+op
+.include ../simulations/AMP_NMCF_dev_params.spice
+.endc
+
+.end

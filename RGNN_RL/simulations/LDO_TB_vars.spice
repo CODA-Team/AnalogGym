@@ -1,0 +1,9 @@
+.param mosfet_0_8_w_biascm_pmos=1.1511714458465576 mosfet_0_8_l_biascm_pmos=2.908731134608388 mosfet_0_8_m_biascm_pmos=27
+.param mosfet_8_2_w_gm1_pmos=1.485758513212204 mosfet_8_2_l_gm1_pmos=1.1558892875909805 mosfet_8_2_m_gm1_pmos=14
+.param mosfet_10_1_w_gm2_pmos=6.022575721144676 mosfet_10_1_l_gm2_pmos=2.1927622258663177 mosfet_10_1_m_gm2_pmos=27
+.param mosfet_11_1_w_power_pmos=7.487297892570496 mosfet_11_1_l_power_pmos=1.1738390671089292 mosfet_11_1_m_power_pmos=949
+.param mosfet_17_7_w_biascm_nmos=1.812826544046402 mosfet_17_7_l_biascm_nmos=1.0926024317741394 mosfet_17_7_m_biascm_nmos=5
+.param mosfet_21_2_w_load2_nmos=2.9079740941524506 mosfet_21_2_l_load2_nmos=4.691825315356255 mosfet_21_2_m_load2_nmos=24
+.param current_0_bias=3.211307168006898e-06
+.param M_C0=19
+.param M_CL=287

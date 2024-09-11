@@ -1,0 +1,122 @@
+Error: Could not find include file ../../../libs.tech/ngspice/parasitics/sky130_fd_pr__model__parasitic__diode_pw2dn__extended_drain.model.spice
+Error: Could not find include file ../../../libs.tech/ngspice/parasitics/sky130_fd_pr__model__parasitic__diode_ps2dn__extended_drain.model.spice
+
+Note: Compatibility modes selected: hs a
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+
+Circuit: test opamp tran
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Warning: Further gmin increment
+Trying gmin =   4.5316E-06 Note: One successful gmin step
+Trying gmin =   3.2781E-06 Warning: Further gmin increment
+Trying gmin =   4.1792E-06 Warning: Further gmin increment
+Trying gmin =   4.4408E-06 Note: One successful gmin step
+Trying gmin =   4.3080E-06 Note: One successful gmin step
+Trying gmin =   4.1792E-06 Note: One successful gmin step
+Trying gmin =   3.9932E-06 Note: One successful gmin step
+Trying gmin =   3.7295E-06 Note: One successful gmin step
+Trying gmin =   3.3664E-06 Note: One successful gmin step
+Trying gmin =   2.8868E-06 Note: One successful gmin step
+Trying gmin =   2.2925E-06 Note: One successful gmin step
+Trying gmin =   1.6223E-06 Note: One successful gmin step
+Trying gmin =   9.6579E-07 Note: One successful gmin step
+Trying gmin =   4.4361E-07 Note: One successful gmin step
+Trying gmin =   1.3810E-07 Note: One successful gmin step
+Trying gmin =   2.3985E-08 Note: One successful gmin step
+Trying gmin =   2.3985E-09 Note: One successful gmin step
+Trying gmin =   2.3985E-10 Note: One successful gmin step
+Trying gmin =   2.3985E-11 Note: One successful gmin step
+Trying gmin =   2.3985E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        1.8
+vss                                          0
+ib                                    0.706803
+gnda                               6.94697e-06
+visr                                       0.3
+vout3                                 0.299962
+x1.net050                             0.750186
+x1.net049                             0.679894
+x1.net043                             0.562916
+x1.voutn                              0.795745
+x1.net063                             0.100892
+x1.net31                               1.41899
+x1.dm_2                               0.101146
+x1.vb3                                0.656521
+x1.dm_1                               0.594902
+x1.vb4                                0.594902
+x1.net54                             0.0595645
+x1.net56                             0.0595645
+x1.xc0.a                              0.299962
+x1.xc0.b1                             0.299962
+x1.xc1.a                              0.299962
+x1.xc1.b1                             0.299962
+vvisr#branch                                 0
+v2#branch                          0.000195703
+v1#branch                          -0.00020265
+
+
+No. of Data Rows : 480
+t_rise_edge         =  1.325783e-06
+t_rise = 3.257830e-07
+sr_rise = 3.069528e+05
+t_fall_edge         =  2.014461e-04
+t_fall = 4.461000e-07
+sr_fall = 2.241650e+05
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+ASCII raw file "tran.dat"
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Warning: Further gmin increment
+Trying gmin =   4.5316E-06 Note: One successful gmin step
+Trying gmin =   3.2781E-06 Warning: Further gmin increment
+Trying gmin =   4.1792E-06 Warning: Further gmin increment
+Trying gmin =   4.4408E-06 Note: One successful gmin step
+Trying gmin =   4.3080E-06 Note: One successful gmin step
+Trying gmin =   4.1792E-06 Note: One successful gmin step
+Trying gmin =   3.9932E-06 Note: One successful gmin step
+Trying gmin =   3.7295E-06 Note: One successful gmin step
+Trying gmin =   3.3664E-06 Note: One successful gmin step
+Trying gmin =   2.8868E-06 Note: One successful gmin step
+Trying gmin =   2.2925E-06 Note: One successful gmin step
+Trying gmin =   1.6223E-06 Note: One successful gmin step
+Trying gmin =   9.6579E-07 Note: One successful gmin step
+Trying gmin =   4.4361E-07 Note: One successful gmin step
+Trying gmin =   1.3810E-07 Note: One successful gmin step
+Trying gmin =   2.3985E-08 Note: One successful gmin step
+Trying gmin =   2.3985E-09 Note: One successful gmin step
+Trying gmin =   2.3985E-10 Note: One successful gmin step
+Trying gmin =   2.3985E-11 Note: One successful gmin step
+Trying gmin =   2.3985E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+ASCII raw file "AMP_NMCF_op"
+Note: Simulation executed from .control section 

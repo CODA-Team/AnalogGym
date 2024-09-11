@@ -1,0 +1,80 @@
+Test LDO Tran
+
+*.OPTIONS RELTOL=.0001
+***************************************
+* Step 1: Replace circuit netlist here.
+*************************************** 
+.include  ../simulations/LDO_TB.txt
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+***************************************
+* Step 2: Replace circuit param.  here.
+*************************************** 
+.PARAM supply_voltage = 1.8
+.PARAM Vref = 0.4
+.PARAM PARAM_ILOAD = 55m 
+.PARAM val0 = 5m
+.PARAM val1 = 55m
+.PARAM GBW_ideal = 5e4
+.PARAM STEP_TIME = '10/GBW_ideal'
+.include ../simulations/LDO_TB_vars.spice
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+Vindc vref_in 0 'Vref'
+
+* Circuit List:
+* Basic_LDO
+
+* XLDO gnda vdda vinn vout vfb vinp Ib
+*        |  |     |     |   |    |   |
+*        |  |     |     |   |    |   bias current
+*        |  |     |     |   |    Non-inverting input 
+*        |  |     |     |   Feedback voltage 
+*        |  |     |     |   
+*        |  |     |     Output
+*        |  |     Inverting Input
+*        |  Positive Supply
+*         Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Basic_LDO -> DFCFC_LDO
+*************************************** 
+*   Tran TB   
+x1 vss vdd vref_in vout1 vfb1 vfb1 Ib Basic_LDO
+Ib Ib 0 DC='current_0_bias'
+XCL vout1 0 sky130_fd_pr__cap_mim_m3_1 W=30 L=30 MF=M_CL m=M_CL
+Iload1 vout1 0 pulse('val0' 'val1' 1u 1p 1p '0.25*STEP_TIME' 1)
+
+.control
+* save all voltage and current
+save all
+.options savecurrents 
+set filetype=ascii
+set units=degrees
+
+* Tran test (STEP_TIME = 10/GBW_ideal)
+tran 10n 100u
+meas tran v_min MIN v(vout1) from=0 to= 50u
+meas tran v_max MAX v(vout1) from=50u to= 100u
+let v_undershoot = 4*0.4 - v_min
+let v_overshoot = v_max - 4*0.4
+print v_undershoot 
+print v_overshoot
+plot v(vout1)
+wrdata LDO_TB_Tran_meas v_undershoot v_overshoot
+
+* OP
+op
+.include ../simulations/LDO_TB_dev_params.spice
+.endc
+
+.end

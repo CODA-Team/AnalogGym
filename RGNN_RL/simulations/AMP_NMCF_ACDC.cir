@@ -1,0 +1,122 @@
+Test OpAmp ACDC
+
+*.OPTIONS RELTOL=.0001
+***************************************
+* Step 1: Replace circuit netlist here.
+*************************************** 
+.include ../simulations/NMCF_Pin_3_HSPICE_130.txt
+
+.param mc_mm_switch=0
+.param mc_pr_switch=0
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice
+.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice
+
+***************************************
+* Step 2: Replace circuit param.  here.
+*************************************** 
+.PARAM supply_voltage = 1.8
+.PARAM VCM_ratio = 0.4
+.PARAM PARAM_CLOAD =10.00p 
+.include ../simulations/AMP_NMCF_vars.spice
+
+V1 vdd 0 'supply_voltage'
+V2 vss 0 0 
+
+Vindc opin 0 'supply_voltage*VCM_ratio'
+Vin signal_in 0 dc 'supply_voltage*VCM_ratio' ac 1 sin('supply_voltage*VCM_ratio' 100m 500)
+
+Lfb opout opout_dc 1T
+Cin opout_dc signal_in 1T
+
+* Circuit List:
+* Leung_NMCNR_Pin_3
+* Leung_NMCF_Pin_3
+* Leung_DFCFC1_Pin_3
+* Leung_DFCFC2_Pin_3
+
+* XOP gnda vdda vinn vinp vout
+*        |  |     |     |   |
+*        |  |     |     |   Output
+*        |  |     |     Non-inverting Input
+*        |  |      Inverting Input
+*        |  Positive Supply
+*        Negative Supply 
+
+***************************************
+* Step 3: Replace circuit name below.
+* e.g. Leung_NMCNR_Pin_3 -> Leung_NMCF_Pin_3
+*************************************** 
+*    ADM TB 
+Ib Ib gnda DC='current_0_bias'
+x1 vss vdd opout_dc opin opout Ib Leung_NMCF_Pin_3
+Cload1 opout 0 'PARAM_CLOAD'
+
+*   ACM TB    
+vcmdc cm0 0 'supply_voltage*VCM_ratio'
+vcmac1 cm1 cm0 0 ac=1
+vcmac2 cm2 cm3 0 ac=1
+Ib2 Ib2 gnda DC='current_0_bias'
+x2 vss vdd cm2 cm1 cm3 Ib2 Leung_NMCF_Pin_3
+Cload2 cm3 0 'PARAM_CLOAD'
+
+* PSRR   TB   
+VGNDApsrr gndpsrr 0 0 AC=1
+VVDDApsrr vddpsrr 0 'supply_voltage'  AC=1
+Ib3 Ib3 gnda DC='current_0_bias'
+x3 vss vddpsrr ppsr1 opin ppsr1 Ib3 Leung_NMCF_Pin_3
+Cload3 ppsr1 0 'PARAM_CLOAD'
+
+Ib4 Ib4 gnda DC='current_0_bias'
+x4 gndpsrr vdd npsr1 opin npsr1 Ib4 Leung_NMCF_Pin_3
+Cload4 npsr1 0 'PARAM_CLOAD'
+
+* DC ALL  TB  
+VVDDdc VDDdc 0 'supply_voltage' 
+Ib5 Ib5 gnda DC='current_0_bias'
+x5 vss vdddc vout6 opin vout6 Ib5 Leung_NMCF_Pin_3
+Cload5 vout6 0 'PARAM_CLOAD'
+
+.control
+save all
+.options savecurrents 
+set filetype=ascii
+set units=degrees
+
+DC temp -40 125 1
+* TC meas   
+meas dc maxval MAX V(vout6) from=-40 to=125
+meas dc minval MIN V(vout6) from=-40 to=125
+meas dc avgval AVG V(vout6) from=-40 to=125
+meas dc ppavl  PP V(vout6) from=-40 to=125
+let TC = ppavl/avgval/165
+* Power meas   
+meas dc Ivdd25 FIND I(VVDDDC) AT=25
+let Power_ = -1 * Ivdd25 * 1.8
+let Power = Power_ * 1e6
+*   Vos.meas   
+meas dc vout25 FIND V(vout6) AT=25
+let vos25 = vout25 - 1.8 * 0.4
+wrdata AMP_NMCF_ACDC_DC TC Power vos25
+plot v(vout6)
+
+ac dec 10 0.1 1G
+meas ac cmrrdc find vdb(cm3) at = 0.1 
+meas ac dcgain_ find vdb(opout) at = 0.1
+let dcgain = abs(dcgain_)
+meas ac gain_bandwidth_product_ when vdb(opout)=0
+let gbp = gain_bandwidth_product_*1e-4
+meas ac phase_margin find vp(opout) when vdb(opout)=0
+meas ac DCPSRp find vdb(ppsr1) at = 0.1
+meas ac DCPSRn find vdb(npsr1) at = 0.1
+wrdata AMP_NMCF_ACDC_AC cmrrdc DCPSRp DCPSRn dcgain_ 
+wrdata AMP_NMCF_ACDC_GBW_PM gain_bandwidth_product_ phase_margin 
+plot vdb(opout) vdb(cm3) vdb(ppsr1) vdb(npsr1) vp(opout)
+
+* OP
+op
+.include ../simulations/AMP_NMCF_dev_params.spice
+.endc
+
+.end

@@ -1,0 +1,318 @@
+
+Note: Compatibility modes selected: hs a
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+
+Circuit: test ldo acdc
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   4.2170E-07 Warning: Further gmin increment
+Trying gmin =   8.0584E-07 Note: One successful gmin step
+Trying gmin =   5.8294E-07 Note: One successful gmin step
+Trying gmin =   3.5866E-07 Note: One successful gmin step
+Trying gmin =   1.7309E-07 Note: One successful gmin step
+Trying gmin =   5.8033E-08 Note: One successful gmin step
+Trying gmin =   1.1266E-08 Note: One successful gmin step
+Trying gmin =   1.1266E-09 Note: One successful gmin step
+Trying gmin =   1.1266E-10 Note: One successful gmin step
+Trying gmin =   1.1266E-11 Note: One successful gmin step
+Trying gmin =   1.1266E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 201
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 201
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   3.1623E-06 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Note: One successful gmin step
+Trying gmin =   1.7783E-07 Note: One successful gmin step
+Trying gmin =   1.7783E-08 Note: One successful gmin step
+Trying gmin =   1.7783E-09 Note: One successful gmin step
+Trying gmin =   1.7783E-10 Note: One successful gmin step
+Trying gmin =   1.7783E-11 Note: One successful gmin step
+Trying gmin =   1.7783E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 37
+maxval1             =  -2.794578e+00 at=  1.970000e+00
+minval1             =  -9.164910e+00 at=  1.620000e+00
+avgval1             =  -4.998392e+00 from=  1.620000e+00 to=  1.980000e+00
+ppavl1              =  6.370332e+00 from=  1.620000e+00 to=  1.980000e+00
+lnr1 = -3.54021e+00
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Note: One successful gmin step
+Trying gmin =   1.7783E-07 Warning: Further gmin increment
+Trying gmin =   4.6976E-07 Note: One successful gmin step
+Trying gmin =   2.8903E-07 Note: One successful gmin step
+Trying gmin =   1.3949E-07 Note: One successful gmin step
+Trying gmin =   4.6765E-08 Note: One successful gmin step
+Trying gmin =   9.0784E-09 Note: One successful gmin step
+Trying gmin =   3.9999E-09 Note: One successful gmin step
+Trying gmin =   1.1698E-09 Note: One successful gmin step
+Trying gmin =   1.8502E-10 Note: One successful gmin step
+Trying gmin =   1.8502E-11 Note: One successful gmin step
+Trying gmin =   1.8502E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 37
+maxval2             =  1.585896e+00 at=  1.970000e+00
+minval2             =  -4.008218e+00 at=  1.620000e+00
+avgval2             =  4.540688e-01 from=  1.620000e+00 to=  1.980000e+00
+ppavl2              =  5.594114e+00 from=  1.620000e+00 to=  1.980000e+00
+lnr2 = 3.422214e+01
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Warning: Further gmin increment
+Trying gmin =   1.7154E-06 Note: One successful gmin step
+Trying gmin =   1.2409E-06 Warning: Further gmin increment
+Trying gmin =   1.5820E-06 Note: One successful gmin step
+Trying gmin =   1.4011E-06 Note: One successful gmin step
+Trying gmin =   1.1678E-06 Note: One successful gmin step
+Trying gmin =   8.8865E-07 Note: One successful gmin step
+Trying gmin =   5.8986E-07 Note: One successful gmin step
+Trying gmin =   4.8058E-07 Note: One successful gmin step
+Trying gmin =   3.5341E-07 Note: One successful gmin step
+Trying gmin =   2.2287E-07 Note: One successful gmin step
+Trying gmin =   1.1161E-07 Note: One successful gmin step
+Trying gmin =   3.9555E-08 Note: One successful gmin step
+Trying gmin =   8.3453E-09 Note: One successful gmin step
+Trying gmin =   8.3453E-10 Note: One successful gmin step
+Trying gmin =   8.3453E-11 Note: One successful gmin step
+Trying gmin =   8.3453E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 501
+Error: no such vector as time, frquency or v-sweep.
+
+Error: measure  maxval  max(TRIG) : out of interval
+ meas dc maxval max v(vout6) from=5m to=55m failed!
+
+Error: no such vector as time, frquency or v-sweep.
+
+Error: measure  minval  min(TRIG) : out of interval
+ meas dc minval min v(vout6) from=5m to=55m failed!
+
+Error: no such vector as time, frquency or v-sweep.
+
+Error: measure  avgval  avg(TRIG) : out of interval
+ meas dc avgval avg v(vout6) from=5m to=55m failed!
+
+Error: no such vector as time, frquency or v-sweep.
+
+Error: measure  ppavl  pp(TRIG) : out of interval
+ meas dc ppavl pp v(vout6) from=5m to=55m failed!
+
+Warning from checkvalid: vector ppavl is not available or has zero length.
+Error: RHS "ppavl/avgval/50m" invalid
+Warning from checkvalid: vector lr is not available or has zero length.
+ivdd1               =  -5.501636e-02
+power1 = 9.902945e-02
+ivdd2               =  -5.036064e-03
+power2 = 9.064915e-03
+vout_x              =  -4.515606e+00
+vos1 = -6.11561e+00
+vout_y              =  1.582033e+00
+vos2 = -1.79670e-02
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Error: no such vector LR
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Warning: Further gmin increment
+Trying gmin =   1.7154E-06 Note: One successful gmin step
+Trying gmin =   1.2409E-06 Warning: Further gmin increment
+Trying gmin =   1.5820E-06 Note: One successful gmin step
+Trying gmin =   1.4011E-06 Note: One successful gmin step
+Trying gmin =   1.1678E-06 Note: One successful gmin step
+Trying gmin =   8.8865E-07 Note: One successful gmin step
+Trying gmin =   5.8986E-07 Note: One successful gmin step
+Trying gmin =   4.8058E-07 Note: One successful gmin step
+Trying gmin =   3.5341E-07 Note: One successful gmin step
+Trying gmin =   2.2287E-07 Note: One successful gmin step
+Trying gmin =   1.1161E-07 Note: One successful gmin step
+Trying gmin =   3.9555E-08 Note: One successful gmin step
+Trying gmin =   8.3453E-09 Note: One successful gmin step
+Trying gmin =   8.3453E-10 Note: One successful gmin step
+Trying gmin =   8.3453E-11 Note: One successful gmin step
+Trying gmin =   8.3453E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 101
+dcpsrp1             =  2.229921e+01
+dcgain1             =  -8.632776e+01
+
+Error: measure  gain_bandwidth_product1  when(WHEN) : out of interval
+ meas ac gain_bandwidth_product1 when vdb(vout1)=0 failed!
+
+
+Error: measure  phase_margin1  find(AT) : out of interval
+ meas ac phase_margin1 find vp(vout1) when vdb(vout1)=0 failed!
+
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Error: no such vector gain_bandwidth_product1
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Warning: Further gmin increment
+Trying gmin =   1.7154E-06 Note: One successful gmin step
+Trying gmin =   1.2409E-06 Warning: Further gmin increment
+Trying gmin =   1.5820E-06 Note: One successful gmin step
+Trying gmin =   1.4011E-06 Note: One successful gmin step
+Trying gmin =   1.1678E-06 Note: One successful gmin step
+Trying gmin =   8.8865E-07 Note: One successful gmin step
+Trying gmin =   5.8986E-07 Note: One successful gmin step
+Trying gmin =   4.8058E-07 Note: One successful gmin step
+Trying gmin =   3.5341E-07 Note: One successful gmin step
+Trying gmin =   2.2287E-07 Note: One successful gmin step
+Trying gmin =   1.1161E-07 Note: One successful gmin step
+Trying gmin =   3.9555E-08 Note: One successful gmin step
+Trying gmin =   8.3453E-09 Note: One successful gmin step
+Trying gmin =   8.3453E-10 Note: One successful gmin step
+Trying gmin =   8.3453E-11 Note: One successful gmin step
+Trying gmin =   8.3453E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 101
+dcpsrp2             =  2.229921e+01
+dcgain2             =  6.643109e+01
+gain_bandwidth_product2=  1.094753e+06
+phase_margin2       =  5.342801e+01
+
+Warning: command 'plot' is not available during batch simulation, ignored!
+    You may use Gnuplot instead.
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Note: Starting dynamic gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Note: One successful gmin step
+Trying gmin =   1.0000E-06 Warning: Further gmin increment
+Trying gmin =   5.6234E-06 Note: One successful gmin step
+Trying gmin =   2.3714E-06 Note: One successful gmin step
+Trying gmin =   6.4938E-07 Warning: Further gmin increment
+Trying gmin =   1.7154E-06 Note: One successful gmin step
+Trying gmin =   1.2409E-06 Warning: Further gmin increment
+Trying gmin =   1.5820E-06 Note: One successful gmin step
+Trying gmin =   1.4011E-06 Note: One successful gmin step
+Trying gmin =   1.1678E-06 Note: One successful gmin step
+Trying gmin =   8.8865E-07 Note: One successful gmin step
+Trying gmin =   5.8986E-07 Note: One successful gmin step
+Trying gmin =   4.8058E-07 Note: One successful gmin step
+Trying gmin =   3.5341E-07 Note: One successful gmin step
+Trying gmin =   2.2287E-07 Note: One successful gmin step
+Trying gmin =   1.1161E-07 Note: One successful gmin step
+Trying gmin =   3.9555E-08 Note: One successful gmin step
+Trying gmin =   8.3453E-09 Note: One successful gmin step
+Trying gmin =   8.3453E-10 Note: One successful gmin step
+Trying gmin =   8.3453E-11 Note: One successful gmin step
+Trying gmin =   8.3453E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: Dynamic gmin stepping completed
+
+No. of Data Rows : 1
+ASCII raw file "LDO_TB_op"
+Note: Simulation executed from .control section 
