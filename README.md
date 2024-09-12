@@ -12,7 +12,9 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 - [Getting Started](#Getting_Started)
 - [AnalogGym Contents](#AnalogGym_Contents)
 - [Usage](#Usage)
+- [Usage](#Usage)
 - [Citation](#Citation)
+- [Contact](#Contact)
 
 <h2 id="Getting_Started">**Getting Started**</h2>
 
@@ -33,7 +35,7 @@ The test circuits provided in AnalogGym include:
 
 Note that in the sky130 PDK, transistors have a drain-source breakdown voltage of 1.8V and a threshold voltage of 1V. Consequently, the supply voltage is maintained at 1.8V, rather than being reduced to 1.2V, to meet the required reliability and operational standards.
 
-### Workflow in AnalogGym
+<h3 id="Workflow_in_AnalogGym">Workflow in AnalogGym</h3>
 
 <img width="879" alt="AnalogGym_Flow" src="https://github.com/user-attachments/assets/2e06e4cc-7042-42c1-a395-9157f3677d56">
 
@@ -41,7 +43,7 @@ The design flow decouples circuit configuration from the optimization process, a
 The circuit parameters are maintained in independent configuration files in the `design variables` folder.
 Different netlists can be switched in the testbench, with each netlist representing an encapsulated circuit.
 
-### Testbench
+<h3 id="Testbench">Testbench</h3>
 
 | Line | Ngspice Testbench Description |
 |------|------------------------------------------------------------|
@@ -53,14 +55,14 @@ Different netlists can be switched in the testbench, with each netlist represent
 | 6    | `.PARAM PARAM_CLOAD = 10p` — *Specify load capacitance* |
 | ...  | *Simulation commands; no modifications required.* |
 
-### Simulation
+<h3 id="Simulation">Simulation</h3>
 
 For the simulation setup and execution, you can check the following scripts:
 
 - For the **Amplifier** simulation, refer to [main_AMP.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py).
 - For the **LDO** simulation, refer to [main_LDO.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_LDO.py).
 
-### Performance Extraction
+<h3 id="Performance_Extraction">Performance Extraction</h3>
 
 When extracting performance metrics for the included AMP and LDO circuits, the following points should be noted:
 
@@ -68,11 +70,11 @@ When extracting performance metrics for the included AMP and LDO circuits, the f
   - For AMPs, **Slew Rate (SR)** and **Settling Time** are not directly measurable from simulations and must be **derived** from transient response analysis.
   
 - **Low-Dropout Regulator (LDO)**:
-  - LDO performance varies under **light load** (5mA) and **heavy load** (55mA) conditions, as load current affects efficiency, stability, and response time. Light load (minload) may reduce power consumption but can slow response, while heavy load (maxload) demands higher current supply while maintaining stable output voltage.
+  - LDO performance varies under **light load** (5mA) and **heavy load** (55mA) conditions, as load current affects efficiency, stability, and response time. Light load (minload) may reduce power consumption but can slow response, while heavy load (maxload) demands a higher current supply while maintaining stable output voltage.
 
 Two performance extraction scripts are provided for reference: [AMP](https://github.com/CODA-Team/AnalogGym/blob/main/AnalogGym/Amplifier/perf_extraction_amp.py) and [LDO](https://github.com/CODA-Team/AnalogGym/blob/main/AnalogGym/Low%20Dropout%20Regulator/perf_extraction_LDO.py).
 
-### Additional Resources
+<h3 id="Additional_Resources">Additional Resources</h3>
 
 - For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
 - Detailed documentation can be found in [doc](https://coda-team.github.io/AnalogGym/)
