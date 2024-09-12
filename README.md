@@ -60,7 +60,17 @@ For the simulation setup and execution, you can check the following scripts:
 - For the **Amplifier** simulation, refer to [main_AMP.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py).
 - For the **LDO** simulation, refer to [main_LDO.py](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_LDO.py).
 
+### Performance Extraction
 
+When extracting performance metrics for the included AMP and LDO circuits, the following points should be noted:
+
+- **Amplifier (AMP)**:
+  - For AMPs, **Slew Rate (SR)** and **Settling Time** are not directly measurable from simulations and must be **derived** from transient response analysis.
+  
+- **Low-Dropout Regulator (LDO)**:
+  - LDO performance varies under **light load** (5mA) and **heavy load** (55mA) conditions, as load current affects efficiency, stability, and response time. Light load (minload) may reduce power consumption but can slow response, while heavy load (maxload) demands higher current supply while maintaining stable output voltage.
+
+Two performance extraction scripts are provided for reference: [AMP](https://github.com/CODA-Team/AnalogGym/blob/main/AnalogGym/Amplifier/perf_extraction_amp.py) and [LDO](https://github.com/CODA-Team/AnalogGym/blob/main/AnalogGym/Low%20Dropout%20Regulator/perf_extraction_LDO.py).
 
 ### Additional Resources
 
