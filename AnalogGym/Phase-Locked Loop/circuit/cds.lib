@@ -1,0 +1,9 @@
+#####################################################
+### VIRTUOSO CUSTOM FLOW CDS.LIB FILE
+###
+### Created by make
+#####################################################
+ 
+INCLUDE common.lib
+#
+DEFINE mylib ./mylib

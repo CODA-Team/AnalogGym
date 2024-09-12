@@ -1,0 +1,393 @@
+;====================== Set to XL mode =========================================
+ocnSetXLMode()
+ocnxlProjectDir( "./simulation" )
+ocnxlTargetCellView( "mylib" "pll_vco_core_sim" "adexl" )
+ocnxlResultsLocation( "" )
+ocnxlSimResultsLocation( "" )
+
+;====================== Tests setup ============================================
+
+;---------- Test "Frequency_Max" ------------- 
+ocnxlBeginTest("Frequency_Max")
+simulator( 'spectre )
+design( "mylib" "pll_vco_core_sim" "config")
+path( "//export/home/liwangzhen/Research/pll_verification_ws_v1.0_001" "." )
+modelFile( 
+    '("$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" "mc")
+    '("$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" "t")
+)
+analysis('hb ?autoharms "yes"  ?autotstab "yes"  ?oversample list("1")  
+		?fundfreqs list("(5G)")  ?maxharms list("5")  ?errpreset "conservative"  ?oscana t  
+		?p "/a"  ?n "/b"  ?oscmethod "onetier"  ?lsspDisplayHarmonic ""  
+		?displayHarmonic ""  ?pinnode ""  ?ppv ""  ?tstabmethod "gear2only"  )
+desVar(	  "c_cbank_half_cell" ""	)
+desVar(	  "c_cvar" ""	)
+desVar(	  "c_load" ""	)
+desVar(	  "l_bias1" ""	)
+desVar(	  "l_bias2" ""	)
+desVar(	  "l_calsw" ""	)
+desVar(	  "l_cbank_half_cell" ""	)
+desVar(	  "l_cvar" ""	)
+desVar(	  "l_load" ""	)
+desVar(	  "ln_calsw" ""	)
+desVar(	  "lp_calsw" ""	)
+desVar(	  "r_cvar" ""	)
+desVar(	  "w_bias1" ""	)
+desVar(	  "w_bias2" ""	)
+desVar(	  "w_calsw" ""	)
+desVar(	  "w_cbank_half_cell" ""	)
+desVar(	  "w_cvar" ""	)
+desVar(	  "w_load" ""	)
+desVar(	  "wn_calsw" ""	)
+desVar(	  "wp_calsw" ""	)
+desVar(	  "bandNum" 0	)
+desVar(	  "vdd1p2" 1.2	)
+desVar(	  "vtune" 0.6	)
+envOption(
+	'analysisOrder  list("hb" "hbnoise" "hbac" "pz" "dcmatch" "stb" "tran" "envlp" "ac" "dc" "lf" "noise" "xf" "sp" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "sens" "acmatch") 
+)
+option(	'temp  "27.0" 
+)
+option( ?categ 'turboOpts
+	'psrSwitch  t 
+)
+saveOption( ?simOutputFormat "sst2" )
+saveOption( 'save "selected" )
+save( 'v "/a" )
+temp( 27.0 ) 
+ocnxlOutputSignal( "/a" ?save t)
+ocnxlOutputExpr( "harmonic(xval(v(\"/a\" ?result \"hb_fd\")) 1)" ?name "F_Max" ?plot t ?save t)
+ocnxlEndTest() ; "Frequency_Max"
+
+;---------- Test "Frequency_Min" ------------- 
+ocnxlBeginTest("Frequency_Min")
+simulator( 'spectre )
+design( "mylib" "pll_vco_core_sim" "config")
+path( "//export/home/liwangzhen/Research/pll_verification_ws_v1.0_001" "." )
+modelFile( 
+    '("$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" "mc")
+    '("$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" "t")
+)
+analysis('hb ?autoharms "yes"  ?autotstab "yes"  ?oversample list("1")  
+		?fundfreqs list("(5G)")  ?maxharms list("5")  ?errpreset "conservative"  ?oscana t  
+		?p "/a"  ?n "/b"  ?oscmethod "onetier"  ?lsspDisplayHarmonic ""  
+		?displayHarmonic ""  ?pinnode ""  ?ppv ""  ?tstabmethod "gear2only"  )
+desVar(	  "c_cbank_half_cell" ""	)
+desVar(	  "c_cvar" ""	)
+desVar(	  "c_load" ""	)
+desVar(	  "l_bias1" ""	)
+desVar(	  "l_bias2" ""	)
+desVar(	  "l_calsw" ""	)
+desVar(	  "l_cbank_half_cell" ""	)
+desVar(	  "l_cvar" ""	)
+desVar(	  "l_load" ""	)
+desVar(	  "ln_calsw" ""	)
+desVar(	  "lp_calsw" ""	)
+desVar(	  "r_cvar" ""	)
+desVar(	  "w_bias1" ""	)
+desVar(	  "w_bias2" ""	)
+desVar(	  "w_calsw" ""	)
+desVar(	  "w_cbank_half_cell" ""	)
+desVar(	  "w_cvar" ""	)
+desVar(	  "w_load" ""	)
+desVar(	  "wn_calsw" ""	)
+desVar(	  "wp_calsw" ""	)
+desVar(	  "bandNum" 31	)
+desVar(	  "vdd1p2" 1.2	)
+desVar(	  "vtune" 0.6	)
+envOption(
+	'analysisOrder  list("hb" "hbnoise" "hbac" "pz" "dcmatch" "stb" "tran" "envlp" "ac" "dc" "lf" "noise" "xf" "sp" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "sens" "acmatch") 
+)
+option( ?categ 'turboOpts
+	'psrSwitch  t 
+)
+saveOption( ?simOutputFormat "sst2" )
+saveOption( 'save "selected" )
+save( 'v "/a" )
+temp( 27 ) 
+ocnxlOutputSignal( "/a" ?save t)
+ocnxlOutputExpr( "harmonic(xval(v(\"/a\" ?result \"hb_fd\")) 1)" ?name "F_Min" ?plot t ?save t)
+ocnxlEndTest() ; "Frequency_Min"
+
+;---------- Test "Kto" ------------- 
+ocnxlBeginTest("Kto")
+simulator( 'spectre )
+design( "mylib" "pll_vco_core_sim" "config")
+path( "//export/home/liwangzhen/Research/pll_verification_ws_v1.0_001" "." )
+modelFile( 
+    '("$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" "mc")
+    '("$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" "t")
+)
+analysis('hb ?autoharms "yes"  ?autotstab "yes"  ?oversample list("1")  
+		?fundfreqs list("(5G)")  ?maxharms list("5")  ?errpreset "conservative"  ?oscana t  
+		?p "/a"  ?n "/b"  ?oscmethod "onetier"  ?param "temp"  
+		?start "-40"  ?stop "120"  ?sweepStep "10"  ?maxperiods "300"  
+		?pinnode ""  ?ppv ""  ?tstabmethod "gear2only"  )
+desVar(	  "c_cbank_half_cell" ""	)
+desVar(	  "c_cvar" ""	)
+desVar(	  "c_load" ""	)
+desVar(	  "l_bias1" ""	)
+desVar(	  "l_bias2" ""	)
+desVar(	  "l_calsw" ""	)
+desVar(	  "l_cbank_half_cell" ""	)
+desVar(	  "l_cvar" ""	)
+desVar(	  "l_load" ""	)
+desVar(	  "ln_calsw" ""	)
+desVar(	  "lp_calsw" ""	)
+desVar(	  "r_cvar" ""	)
+desVar(	  "w_bias1" ""	)
+desVar(	  "w_bias2" ""	)
+desVar(	  "w_calsw" ""	)
+desVar(	  "w_cbank_half_cell" ""	)
+desVar(	  "w_cvar" ""	)
+desVar(	  "w_load" ""	)
+desVar(	  "wn_calsw" ""	)
+desVar(	  "wp_calsw" ""	)
+desVar(	  "bandNum" 15	)
+desVar(	  "vdd1p2" 1.2	)
+desVar(	  "vtune" 0.6	)
+envOption(
+	'analysisOrder  list("hb" "hbnoise" "hbac" "pz" "dcmatch" "stb" "tran" "envlp" "ac" "dc" "lf" "noise" "xf" "sp" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "sens" "acmatch") 
+)
+option( ?categ 'turboOpts
+	'psrSwitch  t 
+)
+saveOption( ?simOutputFormat "sst2" )
+saveOption( 'save "selected" )
+save( 'v "/a" )
+temp( 27 ) 
+ocnxlOutputSignal( "/a" ?save t)
+ocnxlOutputExpr( "abs((0.01 * (harmonic(harmonic(xval(v(\"/a\" ?result \"hb_fd\")) 1) 0) - harmonic(harmonic(xval(v(\"/a\" ?result \"hb_fd\")) 1) 1))))" ?name "Kto" ?plot t ?save t)
+ocnxlEndTest() ; "Kto"
+
+;---------- Test "Phase_Noise" ------------- 
+ocnxlBeginTest("Phase_Noise")
+simulator( 'spectre )
+design( "mylib" "pll_vco_core_sim" "config")
+path( "//export/home/liwangzhen/Research/pll_verification_ws_v1.0_001" "." )
+modelFile( 
+    '("$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" "mc")
+    '("$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" "t")
+)
+analysis('hbnoise ?sweeptype "relative"  ?relharmvec list("1")  ?start "100"  
+		?stop "100M"  ?dec "10"  ?maxsideband "15"  ?p "/a"  
+		?n "/b"  ?oprobe ""  ?noisetype "timeaverage"  ?ppv ""  )
+analysis('hb ?autoharms "yes"  ?autotstab "yes"  ?oversample list("1")  
+		?fundfreqs list("(5G)")  ?maxharms list("5")  ?errpreset "conservative"  ?oscana t  
+		?p "/a"  ?n "/b"  ?oscmethod "onetier"  ?pinnode ""  
+		?ppv ""  ?tstabmethod "gear2only"  )
+desVar(	  "c_cbank_half_cell" ""	)
+desVar(	  "c_cvar" ""	)
+desVar(	  "c_load" ""	)
+desVar(	  "l_bias1" ""	)
+desVar(	  "l_bias2" ""	)
+desVar(	  "l_calsw" ""	)
+desVar(	  "l_cbank_half_cell" ""	)
+desVar(	  "l_cvar" ""	)
+desVar(	  "l_load" ""	)
+desVar(	  "ln_calsw" ""	)
+desVar(	  "lp_calsw" ""	)
+desVar(	  "r_cvar" ""	)
+desVar(	  "w_bias1" ""	)
+desVar(	  "w_bias2" ""	)
+desVar(	  "w_calsw" ""	)
+desVar(	  "w_cbank_half_cell" ""	)
+desVar(	  "w_cvar" ""	)
+desVar(	  "w_load" ""	)
+desVar(	  "wn_calsw" ""	)
+desVar(	  "wp_calsw" ""	)
+desVar(	  "bandNum" 15	)
+desVar(	  "vdd1p2" 1.2	)
+desVar(	  "vtune" 0.6	)
+envOption(
+	'analysisOrder  list("hb" "hbnoise" "hbac" "pz" "dcmatch" "stb" "tran" "envlp" "ac" "dc" "lf" "noise" "xf" "sp" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "sens" "acmatch") 
+)
+saveOption( ?simOutputFormat "sst2" )
+saveOption( 'save "selected" )
+save( 'v "/a" "/b" )
+temp( 27 ) 
+ocnxlOutputSignal( "/a" ?save t)
+ocnxlOutputSignal( "/b" ?save t)
+ocnxlOutputExpr( "db(value(getData(\"out\" ?result \"hbnoise\") 1000000.0))" ?name "PN_1M" ?plot t)
+ocnxlOutputExpr( "db(value(getData(\"out\" ?result \"hbnoise\") 1000.0))" ?name "PN_1K" ?plot t)
+ocnxlOutputExpr( "db(getData(\"out\" ?result \"hbnoise\"))" ?name "Phase Noise (dBv/Hz^0.5)")
+ocnxlOutputExpr( "db(value(getData(\"out\" ?result \"hbnoise\") 100000.0))" ?name "PN_100K" ?plot t)
+ocnxlOutputExpr( "db(value(getData(\"out\" ?result \"hbnoise\") 10000.0))" ?name "PN_10K" ?plot t)
+ocnxlOutputExpr( "db(value(getData(\"out\" ?result \"hbnoise\") 1e+07))" ?name "PN_10M" ?plot t)
+ocnxlEndTest() ; "Phase_Noise"
+
+;---------- Test "Tune_Sense" ------------- 
+ocnxlBeginTest("Tune_Sense")
+simulator( 'spectre )
+design( "mylib" "pll_vco_core_sim" "config")
+path( "//export/home/liwangzhen/Research/pll_verification_ws_v1.0_001" "." )
+modelFile( 
+    '("$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" "mc")
+    '("$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" "t")
+)
+analysis('dc ?saveOppoint t  )
+analysis('hb ?autoharms "yes"  ?autotstab "yes"  ?oversample list("1")  
+		?fundfreqs list("(5G)")  ?maxharms list("5")  ?errpreset "conservative"  ?oscana t  
+		?p "/a"  ?n "/b"  ?oscmethod "onetier"  ?param "vtune"  
+		?start "0"  ?stop "1.2"  ?sweepStep "0.1"  ?pinnode ""  
+		?ppv ""  ?tstabmethod "gear2only"  )
+desVar(	  "c_cbank_half_cell" ""	)
+desVar(	  "c_cvar" ""	)
+desVar(	  "c_load" ""	)
+desVar(	  "l_bias1" ""	)
+desVar(	  "l_bias2" ""	)
+desVar(	  "l_calsw" ""	)
+desVar(	  "l_cbank_half_cell" ""	)
+desVar(	  "l_cvar" ""	)
+desVar(	  "l_load" ""	)
+desVar(	  "ln_calsw" ""	)
+desVar(	  "lp_calsw" ""	)
+desVar(	  "r_cvar" ""	)
+desVar(	  "w_bias1" ""	)
+desVar(	  "w_bias2" ""	)
+desVar(	  "w_calsw" ""	)
+desVar(	  "w_cbank_half_cell" ""	)
+desVar(	  "w_cvar" ""	)
+desVar(	  "w_load" ""	)
+desVar(	  "wn_calsw" ""	)
+desVar(	  "wp_calsw" ""	)
+desVar(	  "bandNum" 15	)
+desVar(	  "vdd1p2" 1.2	)
+desVar(	  "vtune" 0.6	)
+envOption(
+	'analysisOrder  list("hb" "hbnoise" "hbac" "dc" "pz" "dcmatch" "stb" "tran" "envlp" "ac" "lf" "noise" "xf" "sp" "pss" "pac" "pstb" "pnoise" "pxf" "psp" "qpss" "qpac" "qpnoise" "qpxf" "qpsp" "sens" "acmatch") 
+)
+option( ?categ 'turboOpts
+	'psrSwitch  t 
+)
+saveOption( ?simOutputFormat "sst2" )
+save( 'i "/V0/PLUS" )
+temp( 27 ) 
+ocnxlOutputTerminal( "/V0/PLUS" ?save t)
+ocnxlOutputExpr( "(- IDC(\"/V0/PLUS\"))" ?name "IDC" ?plot t)
+ocnxlOutputExpr( "ymin(abs(deriv(harmonic(xval(v(\"/a\" ?result \"sweephb_hb_fd-sweep\")) 1))))" ?name "Min Kvco" ?plot t)
+ocnxlOutputExpr( "abs(value(deriv(harmonic(xval(v(\"/a\" ?result \"sweephb_hb_fd-sweep\")) 1)) 1.1))" ?name "Kvco_11" ?plot t)
+ocnxlOutputExpr( "abs(value(deriv(harmonic(xval(v(\"/a\" ?result \"sweephb_hb_fd-sweep\")) 1)) 0.2))" ?name "Kvco_02" ?plot t)
+ocnxlOutputExpr( "ymax(abs(deriv(harmonic(xval(v(\"/a\" ?result \"sweephb_hb_fd-sweep\")) 1))))" ?name "Max Kvco" ?plot t)
+ocnxlEndTest() ; "Tune_Sense"
+
+;====================== Specs ==================================================
+ocnxlPutGreaterthanSpec( "Frequency_Max" "F_Max" "5G" )
+ocnxlPutLessthanSpec( "Frequency_Min" "F_Min" "4.8G" )
+ocnxlPutLessthanSpec( "Kto" "Kto" "100k" )
+ocnxlPutLessthanSpec( "Phase_Noise" "PN_1K" "-25" )
+ocnxlPutLessthanSpec( "Phase_Noise" "PN_10K" "-50" )
+ocnxlPutLessthanSpec( "Phase_Noise" "PN_100K" "-80" )
+ocnxlPutLessthanSpec( "Phase_Noise" "PN_1M" "-100" )
+ocnxlPutLessthanSpec( "Phase_Noise" "PN_10M" "-120" )
+ocnxlPutRangeSpec( "Tune_Sense" "Kvco_11" "100M" "25M" )
+ocnxlPutRangeSpec( "Tune_Sense" "Kvco_02" "100M" "25M" )
+ocnxlPutLessthanSpec( "Tune_Sense" "IDC" "15m" )
+
+;====================== Sweeps setup ===========================================
+ocnxlSweepVar("bandNum" "0")
+ocnxlSweepVar("vdd1p2" "1.2")
+ocnxlSweepVar("vtune" "0.6")
+ocnxlSweepVar("l_calsw" "50n")
+ocnxlSweepVar("ln_calsw" "50n")
+ocnxlSweepVar("lp_calsw" "50n")
+ocnxlSweepVar("w_calsw" "2.5u")
+ocnxlSweepVar("wn_calsw" "5u")
+ocnxlSweepVar("wp_calsw" "10u")
+load("param.ocn")
+ocnxlSweepParam("zambezi/pll_vco/schematic/PM0/l" "PM1/l@zambezi/pll_vco/schematic")
+ocnxlSweepParam("zambezi/pll_vco/schematic/PM0/fw" "PM1/fw@zambezi/pll_vco/schematic")
+ocnxlSweepParam("zambezi/pll_vco/schematic/PM1/l" "100n:10n:150n")
+ocnxlSweepParam("zambezi/pll_vco/schematic/PM1/fw" "700n:100n:1500n")
+ocnxlSweepParam("zambezi/pll_vco/schematic/C1/l" "C0/l@zambezi/pll_vco/schematic")
+ocnxlSweepParam("zambezi/pll_vco/schematic/C0/l" "12u:500n:20u")
+ocnxlSweepParam("zambezi/pll_vco/schematic/R0/r" "160:5:190")
+ocnxlSweepParam("zambezi45/pll_vco/schematic/PM0/fw" "PM1/fw@zambezi45/pll_vco/schematic")
+ocnxlSweepParam("zambezi45/pll_vco/schematic/PM0/l" "PM1/l@zambezi45/pll_vco/schematic")
+ocnxlSweepParam("zambezi45/pll_vco/schematic/PM1/fw" "1u")
+ocnxlSweepParam("zambezi45/pll_vco/schematic/PM1/l" "100n")
+
+;====================== Model Group setup ==========================================
+
+;====================== Corners setup ==========================================
+ocnxlCorner( "C1_Model_MC_VDD_Temp"
+   '(
+      ("variable" "temperature" "-40 27 120")
+      ("variable" "vdd1p2" "1.14 1.2 1.26")
+      ("model" "$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" ?section "\"mc\"")
+      ("model" "$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" ?section "\"t\"")
+      ("modelGroup" "")
+   )
+)
+ocnxlCorner( "C2_Model_FF_VDD_Temp"
+   '(
+      ("variable" "temperature" "-40 27 120")
+      ("variable" "vdd1p2" "1.14 1.2 1.26")
+      ("model" "$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" ?section "\"ff\"")
+      ("model" "$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" ?section "\"t\"")
+      ("modelGroup" "")
+   )
+)
+ocnxlCorner( "C3_Model_SS_VDD_Temp"
+   '(
+      ("variable" "temperature" "-40 27 120")
+      ("variable" "vdd1p2" "1.14 1.2 1.26")
+      ("model" "$PROJECT/TECH/GPDK045/gpdk045/models/spectre/gpdk045.scs" ?section "\"ss\"")
+      ("model" "$PROJECT/DESIGNS/GPDK045/FRACNPLL/models/inductor.scs" ?section "\"t\"")
+      ("modelGroup" "")
+   )
+)
+
+;====================== Checks and Asserts setup ============================================
+ocnxlPutChecksAsserts(?netlist nil)
+
+;====================== Test v/s corners setup =================================
+
+;====================== Job setup ==============================================
+ocnxlJobSetup( '(
+	"blockemail" "1"
+	"configuretimeout" "300"
+	"distributionmethod" "Local"
+	"estimatememoryvalue" ""
+	"lingertimeout" "300"
+	"maxjobs" "4"
+	"name" "ADE XL Default"
+	"preemptivestart" "1"
+	"reconfigureimmediately" "1"
+	"runtimeout" "-1"
+	"showerrorwhenretrying" "1"
+	"showoutputlogerror" "0"
+	"startmaxjobsimmed" "1"
+	"starttimeout" "300"
+	"usesameprocess" "1"
+) )
+
+;====================== Disabled items =========================================
+ocnxlDisableTest("Kto")
+ocnxlDisableSweepVar("bandNum")
+ocnxlDisableCorner("C1_Model_MC_VDD_Temp")
+ocnxlDisableCorner("C2_Model_FF_VDD_Temp")
+ocnxlDisableCorner("C3_Model_SS_VDD_Temp")
+ocnxlSetAllParametersDisabled(t)
+
+;====================== Run Mode Options ======================================
+ocnxlMonteCarloOptions( ?mcMethod "all" ?mcNumPoints "25" ?samplingMode "random" ?saveAllPlots "0" ?saveProcess "0" ?saveMismatch "0" ?useReference "0" ?donominal "1" ?monteCarloSeed "" ?mcStartingRunNumber "" )
+ocnxlYieldImprovementOptions( ?iymethod "all" ?runFullEvaluation "0" ?optimizationMethod "local" ?effort "fine" ?refPoint "1" ?algorithm "0" ?WYCmethod "0" ?iysamplingmethod "random" ?iymontecarlodonominal "1" ?iymontecarloseed "" ?iymontecarlostartingrun "" ?iymcnumpoints "100" ?timeLimit "" ?iterations "3" ?numPoints "1000" ?stopIfNoImprovement "0" ?sigmaTarget "6" )
+ocnxlSensitivityOptions( ?haveDesignParams "1" ?haveProcessParams "0" ?haveDcOp "0" ?haveDesignParamSteps "1" ?designParamPercentage "10" ?processSigmaSteps "1" ?processConfidenceIntervalUniform "10" ?processMethod "Process" )
+
+;====================== Starting Point Info ======================================
+ocnxlStartingPoint( '(
+      ("parameter" "zambezi/pll_vco/schematic/PM1/l" "100n")
+      ("parameter" "zambezi/pll_vco/schematic/PM1/fw" "1u")
+      ("parameter" "zambezi/pll_vco/schematic/C0/l" "16u")
+      ("parameter" "zambezi/pll_vco/schematic/R0/r" "175")
+   )
+)
+
+;====================== Run command ============================================
+ocnxlRun( ?mode 'sweepsAndCorners ?nominalCornerEnabled t ?allCornersEnabled t ?allSweepsEnabled t)
+ocnxlOutputSummary(?exprSummary t ?specSummary t ?detailed t ?wave t)
+ocnxlOpenResults()
+
+;====================== End XL Mode command ===================================
+ocnxlEndXLMode()

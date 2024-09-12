@@ -1,0 +1,49 @@
+### *************************************************************************
+### CDS.LIB FILE
+### Copyright Cadence Design Systems Inc. 2014
+###
+### $Revision: 1.1 $
+### $Date: Wed Jun 25 18:06:31 2014 $
+### *************************************************************************
+
+### *************************************************************************
+###  Common Cadence-Supplied Libraries
+### *************************************************************************
+INCLUDE $PROJECT/setup/tools/IC/cds.lib
+
+### *************************************************************************
+### Zambezi Design Libraries
+### *************************************************************************
+DEFINE zambezi45 $PROJECT/DESIGNS/GPDK045/FRACNPLL/oa/zambezi45
+DEFINE zambezi45_sim $PROJECT/DESIGNS/GPDK045/FRACNPLL/oa/zambezi45_sim
+DEFINE zambezi45_connectLib $PROJECT/DESIGNS/GPDK045/FRACNPLL/oa/zambezi45_connectLib/zambezi45_connectLib
+ASSIGN zambezi45  DISPLAY lockedLib
+ASSIGN zambezi45_connectLib	DISPLAY lockedLib
+UNDEFINE FracN_PLL_45
+DEFINE FracN_PLL_45 $PROJECT/DESIGNS/GPDK045/FRACNPLL/oa/FracN_PLL_45
+ASSIGN FracN_PLL_45 COMBINE zambezi45 zambezi45_sim zambezi45_connectLib
+ASSIGN FracN_PLL_45 DISPLAY Libs_top
+
+### *************************************************************************
+### PDK and Standard Cells libraries
+### *************************************************************************
+UNDEFINE gpdk045 
+DEFINE gpdk045   $PROJECT/TECH/GPDK045/gpdk045/gpdk045
+ASSIGN gpdk045	 DISPLAY PDKlib
+
+UNDEFINE giolib045
+DEFINE giolib045 $PROJECT/LIBS/GPDK045/giolib045/oa22/giolib045
+ASSIGN giolib045 DISPLAY PDKlib
+
+UNDEFINE gsclib045
+DEFINE gsclib045 $PROJECT/LIBS/GPDK045/gsclib045/oa22/gsclib045
+ASSIGN gsclib045 DISPLAY PDKlib
+
+UNDEFINE gsclib045_tech
+DEFINE gsclib045_tech $PROJECT/LIBS/GPDK045/gsclib045/oa22/gsclib045_tech
+ASSIGN gsclib045_tech DISPLAY PDKlib
+
+UNDEFINE PDKg45n_ITDB
+DEFINE PDKg45n_ITDB $PROJECT/setup/compositeLib/PDKg45n_ITDB
+ASSIGN PDKg45n_ITDB DISPLAY PDKlib_top
+ASSIGN PDKg45n_ITDB COMBINE gpdk045 gsclib045 gsclib045_tech giolib045
