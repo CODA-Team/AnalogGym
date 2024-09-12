@@ -1,0 +1,4 @@
+#!/bin/bash
+./clear.sh
+hspice64 -i tran_27corner.sp -o chgp >chgp.info
+python -u measure.py 27 de 1>run_sim.info

@@ -1,0 +1,742 @@
+** Library name: S013G_PLL
+** Cell name: PLL_INV_TFF
+** View name: schematic
+.subckt PLL_INV_TFF in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_INV_TFF
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_LVL
+** View name: schematic
+.subckt PLL_LVL in out _net1 _net0 vss vss33
+xpm4 net18 out _net0 _net0 pod33ll_ckt L=300e-9 W=700e-9 AD=245e-15 AS=245e-15 PD=2.1e-6 PS=2.1e-6 M=1
+xpm3 out net18 _net0 _net0 pod33ll_ckt L=300e-9 W=700e-9 AD=245e-15 AS=245e-15 PD=2.1e-6 PS=2.1e-6 M=1
+xnm2 net18 in vss33 vss33 nod33ll_ckt L=350e-9 W=4e-6 AD=840e-15 AS=1.12e-12 PD=4.42e-6 PS=6.56e-6 M=4
+xnm5 out net24 vss33 vss33 nod33ll_ckt L=350e-9 W=4e-6 AD=840e-15 AS=1.12e-12 PD=4.42e-6 PS=6.56e-6 M=4
+xi47 in net24 _net1 vss PLL_INV_TFF
+.ends PLL_LVL
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV_V33
+** View name: schematic
+.subckt PLL_INV_V33 in out _net0 vss33
+xnm0 out in vss33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=210e-15 AS=350e-15 PD=1.42e-6 PS=2.7e-6 M=2
+xpm2 out in _net0 _net0 pod33ll_ckt L=300e-9 W=2e-6 AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+.ends PLL_INV_V33
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_phase_dumy
+** View name: schematic
+.subckt PLL_phase_dumy in _net0 vss
+xpm0 _net0 in _net0 _net0 p11ll_ckt L=40e-9 W=4.5e-6 AD=1.485e-12 AS=1.485e-12 PD=9.66e-6 PS=9.66e-6 M=1
+xnm0 vss in vss vss n11ll_ckt L=40e-9 W=1.5e-6 AD=495e-15 AS=495e-15 PD=3.66e-6 PS=3.66e-6 M=1
+.ends PLL_phase_dumy
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV12_3P0
+** View name: schematic
+.subckt PLL_INV12_3P0 in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=3.8e-6 AD=1.254e-12 AS=1.254e-12 PD=8.26e-6 PS=8.26e-6 M=2
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=3e-6 AD=990e-15 AS=990e-15 PD=6.66e-6 PS=6.66e-6 M=1
+.ends PLL_INV12_3P0
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV12_1P5_DUMMY
+** View name: schematic
+.subckt PLL_INV12_1P5_DUMMY in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=4.5e-6 AD=1.485e-12 AS=1.485e-12 PD=9.66e-6 PS=9.66e-6 M=1
+xpm1 out in vss vss n11ll_ckt L=40e-9 W=1.5e-6 AD=495e-15 AS=495e-15 PD=3.66e-6 PS=3.66e-6 M=1
+.ends PLL_INV12_1P5_DUMMY
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV_SMALL
+** View name: schematic
+.subckt PLL_INV_SMALL in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=900e-9 AD=297e-15 AS=297e-15 PD=2.46e-6 PS=2.46e-6 M=1
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=300e-9 AD=99e-15 AS=99e-15 PD=1.26e-6 PS=1.26e-6 M=1
+.ends PLL_INV_SMALL
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_delay12
+** View name: schematic
+.subckt PLL_delay12 in out _net0 vss
+xpm0 in vss out _net0 p11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm0 out _net0 in vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_delay12
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV12_1P0
+** View name: schematic
+.subckt PLL_INV12_1P0 in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=3.1e-6 AD=1.023e-12 AS=1.023e-12 PD=6.86e-6 PS=6.86e-6 M=1
+xnm0 out in vss vss n11ll_ckt     L=40e-9 W=1e-6   AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_INV12_1P0
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DFF_balance
+** View name: schematic
+.subckt PLL_DFF_balance ckin d q _net0 vss
+xi13 net085 ck_ _net0 vss PLL_delay12
+xi12 net087 ck _net0 vss PLL_INV12_1P0
+xi16 ckin net087 _net0 vss PLL_INV12_1P0
+xi17 ckin net085 _net0 vss PLL_INV12_1P0
+xpm0 d ck net21 _net0 p11ll_ckt L=40e-9 W=2e-6         AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm1 net9 net21 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=513e-15 AS=891e-15 PD=3.08e-6 PS=6.06e-6 M=2
+xpm7 net24 net9 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm2 net9 net21 vss vss n11ll_ckt L=40e-9 W=1e-6       AD=190e-15 AS=330e-15 PD=1.38e-6 PS=2.66e-6 M=2
+xpm9 net24 ck net21 vss n11ll_ckt L=40e-9 W=1e-6       AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xpm3 net9 ck_ net20 _net0 p11ll_ckt L=40e-9 W=2e-6     AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm4 q net20 _net0 _net0 p11ll_ckt L=40e-9 W=1.4e-6    AD=266e-15 AS=462e-15 PD=1.78e-6 PS=3.46e-6 M=2
+xpm5 _net0 q net12 _net0 p11ll_ckt L=40e-9 W=1e-6      AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xpm6 net20 ck net12 _net0 p11ll_ckt L=40e-9 W=1e-6     AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xpm8 net21 ck_ net24 _net0 p11ll_ckt L=40e-9 W=2e-6    AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm0 d ck_ net21 vss n11ll_ckt L=40e-9 W=1e-6          AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm1 net9 ck net20 vss n11ll_ckt L=40e-9 W=2e-6        AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm2 q net20 vss vss n11ll_ckt L=40e-9 W=1e-6          AD=190e-15 AS=330e-15 PD=1.38e-6 PS=2.66e-6 M=2
+xnm3 vss q net12 vss n11ll_ckt L=40e-9 W=1e-6          AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm4 net20 ck_ net12 vss n11ll_ckt L=40e-9 W=1e-6      AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm5 net24 net9 vss vss n11ll_ckt L=40e-9 W=1e-6       AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_DFF_balance
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DIV2
+** View name: schematic
+.subckt PLL_DIV2 in out _net0 vss
+xi0 in d out _net0 vss PLL_DFF_balance
+xi1 out d _net0 vss PLL_INV12_1P0
+.ends PLL_DIV2
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_nand_TFF
+** View name: schematic
+.subckt PLL_nand_TFF in1 in2 out _net0 vss
+xpm0 out in1 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm1 out in2 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xnm0 out in2 net29 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm1 net29 in1 vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_nand_TFF
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DFF_TFF
+** View name: schematic
+.subckt PLL_DFF_TFF cp d q qn rn _net0 vss
+xi11 cpn net0151 _net0 vss PLL_INV_TFF
+xi10 cp cpn _net0 vss PLL_INV_TFF
+xpm0 net51 net0151 net36 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm12 qn net25 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm7 net24 rn _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm8 q net24 _net0 _net0 p11ll_ckt L=40e-9 W=2.6e-6 AD=858e-15 AS=858e-15 PD=5.86e-6 PS=5.86e-6 M=1
+xpm11 net25 net0151 net40 _net0 p11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xpm9 net40 net24 _net0 _net0 p11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xpm5 net24 net25 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm4 net25 cpn net61 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm2 net43 net61 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm3 net51 cpn net43 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm1 net61 net51 _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm01 net51 rn _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm111 net36 d _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xnm3 net32 d net64 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm4 net64 rn vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm15 qn net25 vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm12 q net24 vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm14 net5 net24 vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm11 net24 net25 net58 vss n11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xnm13 net25 cpn net5 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm10 net58 rn vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm9 net25 net0151 net61 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm8 net55 rn vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm7 net12 net61 net55 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm6 net51 net0151 net12 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm5 net61 net51 vss vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm2 net51 cpn net32 vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_DFF_TFF
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_TFF
+** View name: schematic
+.subckt PLL_TFF clk crn q qn t _net0 vss resetn
+xi5 resetn d net034 _net0 vss PLL_nand_TFF
+xi6 net034 net7 _net0 vss PLL_INV_TFF
+xi4 t tn _net0 vss PLL_INV_TFF
+xi0 clk net7 q qn crn _net0 vss PLL_DFF_TFF
+xpm1 q t d _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm0 qn tn d _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xnm0 d t qn vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm1 d tn q vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_TFF
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_Counter5
+** View name: schematic
+.subckt PLL_Counter5 c clk crn _net0 vss
+xi4 q1 q0 net30 _net0 vss PLL_nand_TFF
+xi39 q2 resetn _net0 vss PLL_INV_TFF
+xi30 q2 net26 _net0 vss PLL_INV_TFF
+xi9 net26 c _net0 vss PLL_INV_TFF
+xi10 net30 net069 _net0 vss PLL_INV_TFF
+xi2 clk crn q2 net033 net069 _net0 vss resetn PLL_TFF
+xi1 clk crn q1 net045 q0 _net0 vss resetn PLL_TFF
+xi0 clk crn q0 net050 _net0 _net0 vss resetn PLL_TFF
+.ends PLL_Counter5
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DIV10
+** View name: schematic
+.subckt PLL_DIV10 clk co crn _net0 vss
+xi3 c1 net29 _net0 vss PLL_INV_TFF
+xi4 net29 co _net0 vss PLL_INV_TFF
+xi1 clk crn c1 net25 c _net0 vss _net0 PLL_TFF
+xi0 c clk crn _net0 vss PLL_Counter5
+.ends PLL_DIV10
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV_dec
+** View name: schematic
+.subckt PLL_INV_dec in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm1 out in vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+.ends PLL_INV_dec
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INVX2_1
+** View name: schematic
+.subckt PLL_INVX2_1 a _net0 vss y
+xpm0 y a _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm1 y a vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+.ends PLL_INVX2_1
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INVX3
+** View name: schematic
+.subckt PLL_INVX3 in out _net0 vss
+xnm3 out in _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+.ends PLL_INVX3
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DFFR
+** View name: schematic
+.subckt PLL_DFFR clk d q reset _net0 vss
+xi80 reset reset_ _net0 vss PLL_INV_dec
+xi66 clk clk_ _net0 vss PLL_INV_dec
+xi84 net62 _net0 vss net062 PLL_INVX2_1
+xi85 net086 q _net0 vss PLL_INVX3
+xpm2 net62 clk_ net084 _net0 p11ll_ckt L=40e-9 W=400e-9 AD=132e-15 AS=132e-15 PD=1.46e-6 PS=1.46e-6 M=1
+xpm3 net086 clk net33 _net0 p11ll_ckt L=500e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm11 net33 q _net0 _net0 p11ll_ckt L=500e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm88 net086 reset_ _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm99 net084 net062 _net0 _net0 p11ll_ckt L=500e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm38 net062 clk_ net086 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=2
+xpm1 d clk net62 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=2
+xnm2 net62 clk net066 vss n11ll_ckt L=40e-9 W=200e-9 AD=92.4e-15 AS=92.4e-15 PD=1.26e-6 PS=1.26e-6 M=1
+xnm3 net086 clk_ net061 vss n11ll_ckt L=1e-6 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm0 net061 q vss vss n11ll_ckt L=1e-6 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm102 net066 net062 vss vss n11ll_ckt L=1e-6 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm101 net62 reset vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm39 net062 clk net086 vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=2
+xnm22 d clk_ net62 vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=2
+.ends PLL_DFFR
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DIV2_DIGI
+** View name: schematic
+.subckt PLL_DIV2_DIGI in out _net0 vss
+xi0 in d out vss _net0 vss PLL_DFFR
+xi1 out d _net0 vss PLL_INV_dec
+.ends PLL_DIV2_DIGI
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_INV_RESET
+** View name: schematic
+.subckt PLL_INV_RESET in out reset _net0 vss
+xpm2 out reset net12 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm1 net12 in _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+.ends PLL_INV_RESET
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_DIV2_DIGI_RESET
+** View name: schematic
+.subckt PLL_DIV2_DIGI_RESET in out outb reset _net0 vss
+xi0 in outb out reset _net0 vss PLL_DFFR
+xi1 out outb reset _net0 vss PLL_INV_RESET
+.ends PLL_DIV2_DIGI_RESET
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_XOR_12
+** View name: schematic
+.subckt PLL_XOR_12 in1 in2 out _net0 vss
+xi0 in1 net5 _net0 vss PLL_INV_dec
+xpm0 in2 in1 out _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm1 out in2 in1 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm2 in2 net5 out vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm3 out in2 net5 vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+.ends PLL_XOR_12
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_NAND3I
+** View name: schematic
+.subckt PLL_NAND3I in1 in2 in3 out _net0 vss
+xpm2 out in3 _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm6 out in2 _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xpm3 out in1 _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm1 out in1 net026 vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xnm0 net023 in3 vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xnm5 net026 in2 net023 vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+.ends PLL_NAND3I
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_NOR3I
+** View name: schematic
+.subckt PLL_NOR3I in1 in2 in3 out _net0 vss
+xpm4 net033 in1 _net0 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xpm2 net030 in2 net033 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xpm3 out in3 net030 _net0 p11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=3
+xnm5 out in3 vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm0 out in2 vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+xnm1 out in1 vss vss n11ll_ckt L=40e-9 W=280e-9 AD=92.4e-15 AS=92.4e-15 PD=1.22e-6 PS=1.22e-6 M=1
+.ends PLL_NOR3I
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_LOCK_DETECTOR
+** View name: schematic
+.subckt PLL_LOCK_DETECTOR ck_ref lock lock_ref reset _net0 vss
+xi85 n8 re_ref _net0 vss PLL_DIV2_DIGI
+xi29 ck_ref n2 _net0 vss PLL_DIV2_DIGI
+xi30 n2 n4 _net0 vss PLL_DIV2_DIGI
+xi31 n4 n8 _net0 vss PLL_DIV2_DIGI
+xi38 lock_ref q1 nq1 re _net0 vss PLL_DIV2_DIGI_RESET
+xi39 q1 q2 nq2 re _net0 vss PLL_DIV2_DIGI_RESET
+xi40 q2 q3 nq3 re _net0 vss PLL_DIV2_DIGI_RESET
+xi41 q3 q4 nq4 re _net0 vss PLL_DIV2_DIGI_RESET
+xi42 q4 q5 nq5 re _net0 vss PLL_DIV2_DIGI_RESET
+xi43 q5 q6 nq6 re _net0 vss PLL_DIV2_DIGI_RESET
+xi44 q6 q7 nq7 re _net0 vss PLL_DIV2_DIGI_RESET
+xi45 q7 q8 nq8 re _net0 vss PLL_DIV2_DIGI_RESET
+xi46 q8 q9 nq9 re _net0 vss PLL_DIV2_DIGI_RESET
+xi83 reset_n re_ref re _net0 vss PLL_XOR_12
+xi128 reset _net0 vss reset_n PLL_INVX2_1
+xi90 nq6 nq5 nq4 net042 _net0 vss PLL_NAND3I
+xi106 nq3 q2 nq1 net071 _net0 vss PLL_NAND3I
+xi89 nq9 q8 q7 net034 _net0 vss PLL_NAND3I
+xi101 nq6 nq5 nq4 net048 _net0 vss PLL_NAND3I
+xi105 _net0 _net0 _net0 net0106 _net0 vss PLL_NAND3I
+xi126 _net0 _net0 _net0 net0109 _net0 vss PLL_NAND3I
+xi87 nq9 q8 nq7 net059 _net0 vss PLL_NAND3I
+xi86 q6 q5 q4 net063 _net0 vss PLL_NAND3I
+xi102 nq9 q8 q7 net092 _net0 vss PLL_NAND3I
+xi92 net034 net042 net071 net068 _net0 vss PLL_NOR3I
+xi103 net092 net048 net0106 net0100 _net0 vss PLL_NOR3I
+xi108 net0100 vss net080 net099 _net0 vss PLL_NOR3I
+xi93 net059 net063 net0109 net080 _net0 vss PLL_NOR3I
+xi98 net099 lock_1 _net0 vss PLL_INV_dec
+xi129 lock_ref lock_1 lock_2 reset_n _net0 vss PLL_DFFR
+xi81 re_ref lock_2 lock reset_n _net0 vss PLL_DFFR
+.ends PLL_LOCK_DETECTOR
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_vco_buffer
+** View name: schematic
+.subckt PLL_vco_buffer inn inp outn outp _net0 vss
+xpm22 outp net096 _net0 _net0 p11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=208e-15 PD=1.18e-6 PS=1.72e-6 M=4
+xpm0 net14 inn _net0 _net0 p11ll_ckt L=40e-9 W=600e-9 AD=198e-15 AS=198e-15 PD=1.86e-6 PS=1.86e-6 M=1
+xpm17 outn net080 _net0 _net0 p11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=208e-15 PD=1.18e-6 PS=1.72e-6 M=4
+xpm23 net096 net088 _net0 _net0 p11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=264e-15 PD=1.18e-6 PS=2.26e-6 M=2
+xpm21 net088 inp _net0 _net0 p11ll_ckt L=40e-9 W=600e-9 AD=198e-15 AS=198e-15 PD=1.86e-6 PS=1.86e-6 M=1
+xpm1 net080 net14 _net0 _net0 p11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=264e-15 PD=1.18e-6 PS=2.26e-6 M=2
+xnm1 net080 net14 vss vss n11ll_ckt L=40e-9 W=800e-9 AD=264e-15 AS=264e-15 PD=2.26e-6 PS=2.26e-6 M=1
+xnm28 outp net096 vss vss n11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=264e-15 PD=1.18e-6 PS=2.26e-6 M=2
+xnm29 net088 inp vss vss n11ll_ckt L=40e-9 W=800e-9 AD=264e-15 AS=264e-15 PD=2.26e-6 PS=2.26e-6 M=1
+xnm27 net096 net088 vss vss n11ll_ckt L=40e-9 W=800e-9 AD=264e-15 AS=264e-15 PD=2.26e-6 PS=2.26e-6 M=1
+xnm23 outn net080 vss vss n11ll_ckt L=40e-9 W=800e-9 AD=152e-15 AS=264e-15 PD=1.18e-6 PS=2.26e-6 M=2
+xnm0 net14 inn vss vss n11ll_ckt L=40e-9 W=800e-9 AD=264e-15 AS=264e-15 PD=2.26e-6 PS=2.26e-6 M=1
+.ends PLL_vco_buffer
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_delay_cell
+** View name: schematic
+.subckt PLL_delay_cell inn inp outn outp vdd_delay vss_delay
+xpm0 outn inp vdd_delay vdd_delay p11ll_ckt L=340e-9 W=2e-6 AD=380e-15 AS=660e-15 PD=2.38e-6 PS=4.66e-6 M=2
+xpm1 outp inn vdd_delay vdd_delay p11ll_ckt L=340e-9 W=2e-6 AD=380e-15 AS=660e-15 PD=2.38e-6 PS=4.66e-6 M=2
+xnm1 outn outp vss_delay vss_delay n11ll_ckt L=340e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm0 outn inp vss_delay vss_delay n11ll_ckt L=340e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm3 outp inn vss_delay vss_delay n11ll_ckt L=340e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm2 outp outn vss_delay vss_delay n11ll_ckt L=340e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_delay_cell
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_delay_cell_dummy
+** View name: schematic
+.subckt PLL_delay_cell_dummy inn inp outn outp vdd_delay vss_delay
+xpm0 vdd_delay vdd_delay vdd_delay vdd_delay p11ll_ckt L=340e-9 W=2e-6 AD=380e-15 AS=660e-15 PD=2.38e-6 PS=4.66e-6 M=2
+xpm1 vdd_delay vdd_delay vdd_delay vdd_delay p11ll_ckt L=340e-9 W=2e-6 AD=380e-15 AS=660e-15 PD=2.38e-6 PS=4.66e-6 M=2
+xnm1 outn outp vss_delay vss_delay n11ll_ckt L=340e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+xnm0 outn inp vss_delay vss_delay n11ll_ckt L=340e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm3 outp inn vss_delay vss_delay n11ll_ckt L=340e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm2 outp outn vss_delay vss_delay n11ll_ckt L=340e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_delay_cell_dummy
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_delay_cell_reset
+** View name: schematic
+.subckt PLL_delay_cell_reset outn outp reset resetn vdd12 vdd_delay vss_delay
+xpm0 outn vdd12 vdd_delay vdd_delay p11ll_ckt L=40e-9 W=4.5e-6 AD=1.485e-12 AS=1.485e-12 PD=9.66e-6 PS=9.66e-6 M=1
+xpm1 outp resetn vdd_delay vdd_delay p11ll_ckt L=40e-9 W=4.5e-6 AD=1.485e-12 AS=1.485e-12 PD=9.66e-6 PS=9.66e-6 M=1
+xnm1 outp vss_delay vss_delay vss_delay n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm0 outn reset vss_delay vss_delay n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_delay_cell_reset
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_VCO_8PHASE
+** View name: schematic
+.subckt PLL_VCO_8PHASE out_0 out_1 out_2 out_3 out_4 out_5 out_6 out_7 vctrl _net0 _net1 vss vss33
+xi9_0 ph_0 ph_4 out_0 out_4 _net0 vss PLL_vco_buffer
+xi9_1 ph_1 ph_5 out_1 out_5 _net0 vss PLL_vco_buffer
+xi9_2 ph_2 ph_6 out_2 out_6 _net0 vss PLL_vco_buffer
+xi9_3 ph_3 ph_7 out_3 out_7 _net0 vss PLL_vco_buffer
+xi0_0 ph_4 ph_0 ph_5 ph_1 vcovdd vss33 PLL_delay_cell
+xi0_1 ph_5 ph_1 ph_6 ph_2 vcovdd vss33 PLL_delay_cell
+xi0_2 ph_6 ph_2 ph_7 ph_3 vcovdd vss33 PLL_delay_cell
+xi0_3 ph_7 ph_3 ph_0 ph_4 vcovdd vss33 PLL_delay_cell
+xi18_0 net0157_0 net0156_0 net0116_0 net0115_0 vcovdd vss33 PLL_delay_cell_dummy
+xi18_1 net0157_1 net0156_1 net0116_1 net0115_1 vcovdd vss33 PLL_delay_cell_dummy
+xi18_2 net0157_2 net0156_2 net0116_2 net0115_2 vcovdd vss33 PLL_delay_cell_dummy
+xi18_3 net0157_3 net0156_3 net0116_3 net0115_3 vcovdd vss33 PLL_delay_cell_dummy
+xi17_0 net0157_0 net0156_0 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi17_1 net0157_1 net0156_1 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi17_2 net0157_2 net0156_2 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi17_3 net0157_3 net0156_3 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi5 ph_3 ph_7 reset resetn _net0 vcovdd vss33 PLL_delay_cell_reset
+xi4_0 ph_0 ph_4 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi4_1 ph_1 ph_5 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xi4_2 ph_2 ph_6 vss33 _net0 _net0 vcovdd vss33 PLL_delay_cell_reset
+xnm1 vss33 _net1 vss33 vss33 nod33ll_ckt L=10e-6 W=15e-6 AD=5.25e-12 AS=5.25e-12 PD=30.7e-6 PS=30.7e-6 M=1
+xnm7 _net1 vctrl vcovdd vcovdd nod33ll_ckt L=400e-9 W=W3 AD=2.56667e-12 AS=2.56667e-12 PD=13.8467e-6 PS=13.8467e-6 M=3
+xpm0 net80 vcovdd _net0 _net0 p11ll_ckt L=40e-9 W=600e-9 AD=198e-15 AS=198e-15 PD=1.86e-6 PS=1.86e-6 M=1
+xpm2 reset resetn _net0 _net0 p11ll_ckt L=40e-9 W=3e-6 AD=990e-15 AS=990e-15 PD=6.66e-6 PS=6.66e-6 M=1
+xpm1 resetn net80 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm2 vss _net0 vss vss n11ll_ckt L=7e-6 W=25e-6 AD=8.25e-12 AS=8.25e-12 PD=50.66e-6 PS=50.66e-6 M=1
+xnm22 vss _net0 vss vss n11ll_ckt L=3e-6 W=6e-6 AD=1.308e-12 AS=1.308e-12 PD=7.636e-6 PS=7.636e-6 M=5
+xnm0 vss _net0 vss vss n11ll_ckt L=5.5e-6 W=8e-6 AD=1.52e-12 AS=1.8e-12 PD=8.38e-6 PS=10.45e-6 M=8
+xnm8 vss vcovdd net80 vss n11ll_ckt L=40e-9 W=800e-9 AD=264e-15 AS=264e-15 PD=2.26e-6 PS=2.26e-6 M=1
+xnm11 vss resetn reset vss n11ll_ckt L=40e-9 W=1.5e-6 AD=495e-15 AS=495e-15 PD=3.66e-6 PS=3.66e-6 M=1
+xnm01 vss net80 resetn vss n11ll_ckt L=40e-9 W=1e-6 AD=330e-15 AS=330e-15 PD=2.66e-6 PS=2.66e-6 M=1
+.ends PLL_VCO_8PHASE
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_nand_PD_2
+** View name: schematic
+.subckt PLL_nand_PD_2 in1 in2 out _net0 vss
+xpm2 out in1 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm1 out in2 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm0 net29 in1 vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm1 out in2 net29 vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_nand_PD_2
+** End of subcircuit definition.
+
+** Library name: smic13mmrf_1233
+** Cell name: rpposab_ckt
+** View name: schematic
+.subckt rpposab_ckt_pcell2460 minus plus
+xr0 plus minus rpposab_2t_ckt m=1 l=segl w=segw
+.ends rpposab_ckt_pcell2460
+** End of subcircuit definition.
+
+** Library name: smic13mmrf_1233
+** Cell name: rpposab_ckt
+** View name: schematic
+.subckt rpposab_ckt_pcell2461 minus plus
+xr3 n3 minus rpposab_2t_ckt m=1 l=segl w=segw
+xr2 n2 n3 rpposab_2t_ckt m=1 l=segl w=segw
+xr1 n1 n2 rpposab_2t_ckt m=1 l=segl w=segw
+xr0 plus n1 rpposab_2t_ckt m=1 l=segl w=segw
+.ends rpposab_ckt_pcell2461
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_LOOP_FILTER
+** View name: schematic
+.subckt PLL_LOOP_FILTER cp_out out pdb reset _net0 _net1 vss vss33 pd_clk_ready
+xi18 pd_clk_ready net5 _net0 _net1 vss vss33 PLL_LVL
+xi17 net027 pd_clk_ready _net0 vss PLL_INV12_1P5_DUMMY
+xi10 reset pdb net027 _net0 vss PLL_nand_PD_2
+xi93 net5 resetn _net1 vss33 PLL_INV_V33
+xnm8 vss33 _net1 vss33 vss33 nod33ll_ckt L=4e-6 W=24e-6 AD=8.4e-12 AS=8.4e-12 PD=48.7e-6 PS=48.7e-6 M=1
+xnm10 vss33 _net1 vss33 vss33 nod33ll_ckt L=10e-6 W=26e-6 AD=5.46e-12 AS=7.28e-12 PD=26.42e-6 PS=39.56e-6 M=4
+xnm7 vss33 _net1 vss33 vss33 nod33ll_ckt L=4e-6 W=9e-6 AD=3.15e-12 AS=3.15e-12 PD=18.7e-6 PS=18.7e-6 M=1
+xnm0 vss33 net14 vss33 vss33 nod33ll_ckt L=10e-6 W=24e-6 AD=5.712e-12 AS=5.712e-12 PD=29.276e-6 PS=29.276e-6 M=5
+xnm6 vss33 _net1 vss33 vss33 nod33ll_ckt L=4e-6 W=20e-6 AD=4.6e-12 AS=4.6e-12 PD=23.3171e-6 PS=23.3171e-6 M=7
+xnm1 vss33 net14 vss33 vss33 nod33ll_ckt L=10e-6 W=9e-6 AD=2.07e-12 AS=2.07e-12 PD=10.7457e-6 PS=10.7457e-6 M=7
+xnm2 vss33 out vss33 vss33 nod33ll_ckt L=10e-6 W=W2 AD=4.76e-12 AS=4.76e-12 PD=24.476e-6 PS=24.476e-6 M=5
+xnm5 vss33 net14 vss33 vss33 nod33ll_ckt L=10e-6 W=20e-6 AD=4.2e-12 AS=4.256e-12 PD=20.42e-6 PS=20.8256e-6 M=M1
+xnm11 vss33 cp_out vss33 vss33 nod33ll_ckt L=10e-6 W=W1 AD=4.76e-12 AS=4.76e-12 PD=24.476e-6 PS=24.476e-6 M=5
+xnm9 vss33 net14 vss33 vss33 nod33ll_ckt L=10e-6 W=20e-6 AD=4.2e-12 AS=4.27778e-12 PD=20.42e-6 PS=20.9833e-6 M=M2
+xnm3 cp_out resetn vss33 vss33 nod33ll_ckt L=2e-6 W=10e-6 AD=3.5e-12 AS=3.5e-12 PD=20.7e-6 PS=20.7e-6 M=1
+xr2 out cp_out rpposab_ckt_pcell2460 m=1 segl=lr2 segw=2e-6
+xr0 net14 cp_out rpposab_ckt_pcell2461 m=1 segl=lr0 segw=2e-6
+.ends PLL_LOOP_FILTER
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_QUENCH_v33
+** View name: schematic
+.subckt PLL_QUENCH_v33 _net0 vin vout vref vss33
+xpm11 vout vout net18 net18 pod33ll_ckt L=q_lupper W=q_wupper AD=2.1e-12 AS=2.8e-12 PD=10.42e-6 PS=15.56e-6 M=4
+xpm10 n79  vin  net18 net18 pod33ll_ckt L=q_lupper W=q_wupper AD=2.1e-12 AS=2.8e-12 PD=10.42e-6 PS=15.56e-6 M=4
+xnm1  vout n78  vss33 vss33 nod33ll_ckt L=q_llower W=q_wlower AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+xnm0  n79  n78  vss33 vss33 nod33ll_ckt L=q_llower W=q_wlower AD=420e-15 AS=513.333e-15 PD=2.42e-6 PS=3.18e-6 M=6
+
+xpm12 _net0 vref _net0 _net0 pod33ll_ckt L=q_lc W=q_wc AD=3.5e-12 AS=3.5e-12 PD=20.7e-6 PS=20.7e-6 M=1
+
+xpm7   n78 vref _net0 _net0 pod33ll_ckt L=q_lref W=q_wref AD=2.1e-12 AS=2.38e-12 PD=10.42e-6 PS=12.476e-6 M=10
+xpm8 net18 vref _net0 _net0 pod33ll_ckt L=q_lref W=q_wref AD=2.38e-12 AS=2.38e-12 PD=12.476e-6 PS=12.476e-6 M=5
+
+xpm9 vss33 n79 n78 n78 pod33ll_ckt L=q_lq W=q_wq AD=2.1e-12 AS=3.5e-12 PD=10.42e-6 PS=20.7e-6 M=2
+.ends PLL_QUENCH_v33
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_CHARGEPUMP
+** View name: schematic
+.subckt PLL_CHARGEPUMP cp_out dn dnb i10u i5u pd pdb up upb _net0 vss33
+xi40 _net0 cp_out quench pb2 vss33 PLL_QUENCH_v33
+
+xnm31 i5u pd  vss33 vss33 nod33ll_ckt L=lpdin  W=wpdin  AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xnm30 nb2 pd  vss33 vss33 nod33ll_ckt L=lpdin  W=wpdin  AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xpm29 pb1 pdb _net0 _net0 pod33ll_ckt L=lpdbin W=wpdbin AD=1.75e-12 AS=1.75e-12 PD=10.7e-6 PS=10.7e-6 M=1
+xpm22 pb2 pdb _net0 _net0 pod33ll_ckt L=lpdbin W=wpdbin AD=1.75e-12 AS=1.75e-12 PD=10.7e-6 PS=10.7e-6 M=1
+
+xpm11 net35 pb2 _net0 _net0 pod33ll_ckt L=luumid W=wuumid AD=2.1e-12 AS=3.5e-12 PD=10.42e-6 PS=20.7e-6 M=2
+xpm12 net47 pb2 net79 _net0 pod33ll_ckt L=luumid W=wuumid AD=2.1e-12 AS=2.45e-12 PD=10.42e-6 PS=12.99e-6 M=8
+
+xpm8  net98 pb1 net47 _net0 pod33ll_ckt L=lumid W=wumid AD=2.1e-12 AS=2.45e-12 PD=10.42e-6 PS=12.99e-6 M=8
+xpm10 pb2   pb1 net35 _net0 pod33ll_ckt L=lumid W=wumid AD=2.1e-12 AS=3.5e-12 PD=10.42e-6 PS=20.7e-6 M=2
+
+xpm3 net91  dnb cp_out net98 pod33ll_ckt L=lp4 W=wp4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xpm1 net91  dn  quench net98 pod33ll_ckt L=lp4 W=wp4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xpm2 quench up  net98  net98 pod33ll_ckt L=lp4 W=wp4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xpm4 cp_out upb net98  net98 pod33ll_ckt L=lp4 W=wp4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+
+xnm5 cp_out dn  net91  vss33 nod33ll_ckt L=ln4 W=wn4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xnm6 net98  up  cp_out vss33 nod33ll_ckt L=ln4 W=wn4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xnm7 quench dnb net91  vss33 nod33ll_ckt L=ln4 W=wn4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+xnm9 net98  upb quench vss33 nod33ll_ckt L=ln4 W=wn4 AD=420e-15 AS=420e-15 PD=3.1e-6 PS=3.1e-6 M=1
+
+xnm14 pb2     i5u net62   vss33 nod33ll_ckt L=lnsupp W=wnsupp AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+xnm18 net91   i5u net58   vss33 nod33ll_ckt L=lnsupp W=wnsupp AD=420e-15 AS=490e-15 PD=2.42e-6 PS=2.99e-6 M=8
+xnm21 pb1     i5u net0124 vss33 nod33ll_ckt L=lnsupp W=wnsupp AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xnm23 net0153 i5u net0119 vss33 nod33ll_ckt L=lnsupp W=wnsupp AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+
+xnm15 net62   nb2     vss33 vss33 nod33ll_ckt L=lnsupp2 W=wnsupp2 AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+xnm17 net58   nb2     net78 vss33 nod33ll_ckt L=lnsupp2 W=wnsupp2 AD=420e-15 AS=490e-15 PD=2.42e-6 PS=2.99e-6 M=8
+xnm20 net0124 nb2     vss33 vss33 nod33ll_ckt L=lnsupp2 W=wnsupp2 AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xnm24 net0119 net0153 vss33 vss33 nod33ll_ckt L=lnsupp2 W=wnsupp2 AD=420e-15 AS=700e-15 PD=2.42e-6 PS=4.7e-6 M=2
+
+xnm33 nb2     i10u net0149 vss33 nod33ll_ckt L=li10 W=wi10 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm32 net0149 i10u net0153 vss33 nod33ll_ckt L=li10 W=wi10 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+
+xnm27 vss33 nb2  vss33   vss33 nod33ll_ckt L=lb1 W=wb1 AD=4.725e-12 AS=4.725e-12 PD=27.7e-6 PS=27.7e-6 M=1
+xnm13 i5u   i5u  vss33   vss33 nod33ll_ckt L=lb2 W=wb2 AD=350e-15   AS=350e-15   PD=2.7e-6  PS=2.7e-6  M=1
+xnm25 i10u  i10u net0153 vss33 nod33ll_ckt L=lb3 W=wb3 AD=420e-15   AS=700e-15   PD=2.42e-6 PS=4.7e-6  M=2
+xpm19 pb1   pb1  _net0   _net0 pod33ll_ckt L=lb4 W=wb4 AD=1.75e-12 AS=1.75e-12   PD=10.7e-6 PS=10.7e-6 M=1
+
+xnm26 vss33 i5u vss33 vss33 nod33ll_ckt   L=lc1 W=wc1 AD=2.45e-12 AS=2.45e-12 PD=14.7e-6 PS=14.7e-6 M=1
+xpm28 _net0 pb2 _net0 _net0 pod33ll_ckt   L=lc2 W=wc2 AD=3.5e-12 AS=3.5e-12 PD=20.7e-6 PS=20.7e-6 M=1
+xnm34 vss33 _net0 vss33 vss33 nod33ll_ckt L=lc3 W=wc3 AD=2.1e-12 AS=2.8e-12 PD=10.42e-6 PS=15.56e-6 M=4
+
+vlower net78 vss33 DC=0
+vupper _net0 net79 DC=0
+.ends PLL_CHARGEPUMP
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_PFD_BUF
+** View name: schematic
+.subckt PLL_PFD_BUF dn dn33 dn33b up up33 up33b _net0 vss33
+xnm27 vss33 _net0 vss33 vss33 nod33ll_ckt L=5e-6 W=10e-6 AD=2.1e-12 AS=3.5e-12 PD=10.42e-6 PS=20.7e-6 M=2
+xnm28 vss33 _net0 vss33 vss33 nod33ll_ckt L=3.8e-6 W=6e-6 AD=1.26e-12 AS=2.1e-12 PD=6.42e-6 PS=12.7e-6 M=2
+xnm25 net1 _net0 up33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm26 net0118 _net0 dn33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm22 dn33b net0118 vss33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm23 net0118 net0114 vss33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm24 net0114 dn vss33 vss33 nod33ll_ckt L=350e-9 W=10e-6 AD=3.5e-12 AS=3.5e-12 PD=20.7e-6 PS=20.7e-6 M=1
+xnm19 up33b net1 vss33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm18 net1 net5 vss33 vss33 nod33ll_ckt L=350e-9 W=1e-6 AD=350e-15 AS=350e-15 PD=2.7e-6 PS=2.7e-6 M=1
+xnm17 net5 up vss33 vss33 nod33ll_ckt L=350e-9 W=10e-6 AD=3.5e-12 AS=3.5e-12 PD=20.7e-6 PS=20.7e-6 M=1
+xpm16 net5 up _net0 _net0 pod33ll_ckt L=300e-9 W=800e-9 AD=280e-15 AS=280e-15 PD=2.3e-6 PS=2.3e-6 M=1
+xpm0 net1 net5 _net0 _net0 pod33ll_ckt L=300e-9 W=3e-6 AD=1.05e-12 AS=1.05e-12 PD=6.7e-6 PS=6.7e-6 M=1
+xpm7 net1 vss33 up33 _net0 pod33ll_ckt L=350e-9 W=2e-6 AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xpm8 net0118 vss33 dn33 _net0 pod33ll_ckt L=350e-9 W=2e-6 AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xpm6 net0118 net0114 _net0 _net0 pod33ll_ckt L=300e-9 W=3e-6 AD=1.05e-12 AS=1.05e-12 PD=6.7e-6 PS=6.7e-6 M=1
+xpm4 dn33b net0118 _net0 _net0 pod33ll_ckt L=300e-9 W=2e-6 AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+xpm5 net0114 dn _net0 _net0 pod33ll_ckt L=300e-9 W=800e-9 AD=280e-15 AS=280e-15 PD=2.3e-6 PS=2.3e-6 M=1
+xpm1 up33b net1 _net0 _net0 pod33ll_ckt L=300e-9 W=2e-6 AD=700e-15 AS=700e-15 PD=4.7e-6 PS=4.7e-6 M=1
+.ends PLL_PFD_BUF
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_nand_PD_3
+** View name: schematic
+.subckt PLL_nand_PD_3 in1 in2 in3 out _net0 vss
+xpm0 out in1 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm2 out in2 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm1 out in3 _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xnm2 net033 in3 vss vss n11ll_ckt L=40e-9 W=2.5e-6 AD=825e-15 AS=825e-15 PD=5.66e-6 PS=5.66e-6 M=1
+xnm1 net29 in1 net033 vss n11ll_ckt L=40e-9 W=2.5e-6 AD=825e-15 AS=825e-15 PD=5.66e-6 PS=5.66e-6 M=1
+xnm0 out in2 net29 vss n11ll_ckt L=40e-9 W=2.5e-6 AD=825e-15 AS=825e-15 PD=5.66e-6 PS=5.66e-6 M=1
+.ends PLL_nand_PD_3
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_NOR2
+** View name: schematic
+.subckt PLL_NOR2 in1 in2 out _net0 vss
+xpm0 net33 in1 _net0 _net0 p11ll_ckt L=40e-9 W=4e-6 AD=1.32e-12 AS=1.32e-12 PD=8.66e-6 PS=8.66e-6 M=1
+xpm1 out in2 net33 _net0 p11ll_ckt L=40e-9 W=4e-6 AD=1.32e-12 AS=1.32e-12 PD=8.66e-6 PS=8.66e-6 M=1
+xpm2 out in1 vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+xpm3 out in2 vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_NOR2
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_invn_2
+** View name: schematic
+.subckt PLL_invn_2 in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=2.7e-6 AD=891e-15 AS=891e-15 PD=6.06e-6 PS=6.06e-6 M=1
+xpm1 out in vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_invn_2
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_invn_PD2
+** View name: schematic
+.subckt PLL_invn_PD2 in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=2e-6 AD=473.333e-15 AS=473.333e-15 PD=3.14e-6 PS=3.14e-6 M=3
+xpm1 out in vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_invn_PD2
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_invn_PD1
+** View name: schematic
+.subckt PLL_invn_PD1 in out _net0 vss
+xpm0 out in _net0 _net0 p11ll_ckt L=40e-9 W=4e-6 AD=1.32e-12 AS=1.32e-12 PD=8.66e-6 PS=8.66e-6 M=1
+xnm0 out in vss vss n11ll_ckt L=40e-9 W=2e-6 AD=660e-15 AS=660e-15 PD=4.66e-6 PS=4.66e-6 M=1
+.ends PLL_invn_PD1
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: PLL_PFD
+** View name: schematic
+.subckt PLL_PFD ck_outm ck_ref down pd up _net0 vss
+xi33 net91 net120 in10 net132 _net0 vss PLL_nand_PD_3
+xi34 net93 net123 in10 net129 _net0 vss PLL_nand_PD_3
+xi62 net061 net088 in1 _net0 vss PLL_NOR2
+xi58 pd net132 up _net0 vss PLL_NOR2
+xi59 pd net129 down _net0 vss PLL_NOR2
+xi55_0 in1 in2 _net0 vss PLL_invn_2
+xi55_1 in2 in3 _net0 vss PLL_invn_2
+xi55_2 in3 in4 _net0 vss PLL_invn_2
+xi55_3 in4 in5 _net0 vss PLL_invn_2
+xi55_4 in5 in6 _net0 vss PLL_invn_2
+xi55_5 in6 in7 _net0 vss PLL_invn_2
+xi55_6 in7 in8 _net0 vss PLL_invn_2
+xi55_7 in8 in9 _net0 vss PLL_invn_2
+xi55_8 in9 in10 _net0 vss PLL_invn_2
+xi21 ck_ref net116 _net0 vss PLL_invn_2
+xi22 ck_outm net118 _net0 vss PLL_invn_2
+xi60 net135 net120 net061 _net0 vss PLL_nand_PD_2
+xi61 net126 net123 net088 _net0 vss PLL_nand_PD_2
+xi24 net120 in10 net134 _net0 vss PLL_nand_PD_2
+xi25 net123 in10 net125 _net0 vss PLL_nand_PD_2
+xi26 net126 net125 net123 _net0 vss PLL_nand_PD_2
+xi27 net129 net118 net126 _net0 vss PLL_nand_PD_2
+xi20 net132 net116 net135 _net0 vss PLL_nand_PD_2
+xi23 net135 net134 net120 _net0 vss PLL_nand_PD_2
+xi29 net95 net91 _net0 vss PLL_invn_PD2
+xi31 net97 net93 _net0 vss PLL_invn_PD2
+xi28 net135 net95 _net0 vss PLL_invn_PD1
+xi30 net126 net97 _net0 vss PLL_invn_PD1
+.ends PLL_PFD
+** End of subcircuit definition.
+
+** Library name: S013G_PLL
+** Cell name: S013G_PLL_TOP
+** View name: schematic
+.subckt S013G_PLL_TOP ck_in in10u1 in5u1 lock out_0 out_1 out_2 out_3 out_4 out_5 out_6 out_7 pd reset _net0 _net1 vss vss33
+xi94 pd pd1 _net0 _net1 vss vss33 PLL_LVL
+xi76 pd1 pd1b _net1 vss33 PLL_INV_V33
+xi17 ckn ck_ref _net0 vss PLL_INV_TFF
+xi24 out_2 _net0 vss PLL_phase_dumy
+xi59 out_6 _net0 vss PLL_phase_dumy
+xi28 out_7 _net0 vss PLL_phase_dumy
+xi29 out_3 _net0 vss PLL_phase_dumy
+xi25 out_5 _net0 vss PLL_phase_dumy
+xi56 out_1 _net0 vss PLL_phase_dumy
+xi12 net52 net73 _net0 vss PLL_INV12_3P0
+xi92 out_4 net55 _net0 vss PLL_INV12_1P5_DUMMY
+xi91 net55 lock_ref _net0 vss PLL_INV12_1P5_DUMMY
+xi13 out_0 net52 _net0 vss PLL_INV12_1P5_DUMMY
+xi90 pd pdb _net0 vss PLL_INV_SMALL
+xi16 ck_in ckn _net0 vss PLL_INV_SMALL
+xi89 net68 net0134 _net0 vss PLL_DIV2
+xi19 div10 net68 _net0 vss PLL_DIV2
+xi11 net73 div10 pdb _net0 vss PLL_DIV10
+xi50 ck_in lock lock_ref pd_clk_ready _net0 vss PLL_LOCK_DETECTOR
+xi60 out_0 out_1 out_2 out_3 out_4 out_5 out_6 out_7 vctr _net0 _net1 vss vss33 PLL_VCO_8PHASE
+xi71 cp_out vctr pdb reset _net0 _net1 vss vss33 pd_clk_ready PLL_LOOP_FILTER
+xi66 cp_out dn dnb in10u1 in5u1 pd1 pd1b up upb _net1 vss33 PLL_CHARGEPUMP
+xi93 dn12 dn dnb up12 up upb _net1 vss33 PLL_PFD_BUF
+xi5 net0134 ck_ref dn12 pd up12 _net0 vss PLL_PFD
+xnm4 vss33 _net1 vss33 vss33 nod33ll_ckt L=3e-6 W=20e-6 AD=4.2e-12 AS=4.6e-12 PD=20.42e-6 PS=23.3171e-6 M=14
+xnm3 vss33 _net1 vss33 vss33 nod33ll_ckt L=10e-6 W=20e-6 AD=4.2e-12 AS=4.32727e-12 PD=20.42e-6 PS=21.3418e-6 M=44
+.ends S013G_PLL_TOP
+** End of subcircuit definition.
+
+** Library name: pll
+** Cell name: PLL_CHARGEPUMP_TEST
+** View name: schematic
+xi0 vcp_net dn_net dnb_net i10u_net i5u_net 0 vdd33_net up_net upb_net vdd33_net 0 PLL_CHARGEPUMP
+
+i10 vdd33_net i10u_net DC=10e-6
+i5 vdd33_net i5u_net DC=5e-6
+v0 vdd33_net 0 DC=vdd33
+c0 vcp_net 0 1e9
+
+vdn  dn_net  0 PULSE 0 3.3 10e-9 10e-12 10e-12 10e-9 20e-9
+vdnb dnb_net 0 PULSE 0 3.3 0     10e-12 10e-12 10e-9 20e-9
+vupb upb_net 0 PULSE 0 3.3 0     10e-12 10e-12 10e-9 20e-9
+vup  up_net  0 PULSE 0 3.3 10e-9 10e-12 10e-12 10e-9 20e-9
