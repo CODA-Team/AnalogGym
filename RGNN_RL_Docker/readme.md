@@ -53,6 +53,4 @@ There are three ways to run the simulation:
    python main_LDO.py
    ```
    to start the simulation.
-```
 
-This version is more concise, polished, and suitable for a README file. It maintains a professional tone while clearly explaining the steps.
