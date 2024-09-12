@@ -12,7 +12,7 @@ Among these, the LDOs and AMPs support the open-source [Ngspice](https://ngspice
 - [Getting Started](#Getting_Started)
 - [AnalogGym Contents](#AnalogGym_Contents)
 - [Usage](#Usage)
-- [Usage](#Usage)
+- [Workflow in AnalogGym](#Workflow_in_AnalogGym)
 - [Citation](#Citation)
 - [Contact](#Contact)
 
