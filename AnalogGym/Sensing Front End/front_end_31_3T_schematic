@@ -1,0 +1,9 @@
+// Library name: front_end
+// Cell name: 31_3T
+// View name: schematic
+subckt front_end_31_3T_schematic GND VDD VOUT
+    M2 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1
+    M1 (net13 VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1
+    M0 (VDD net13 net13 GND) nch_mac l=180n w=2u multi=1 nf=1
+ends front_end_31_3T_schematic
+// End of subcircuit definition.

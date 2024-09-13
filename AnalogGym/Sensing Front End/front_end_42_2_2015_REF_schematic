@@ -1,0 +1,10 @@
+// Library name: front_end
+// Cell name: 42_2_2015_REF
+// View name: schematic
+subckt front_end_42_2_2015_REF_schematic GND VDD VOUT
+    M4 (VDD net12 net12 GND) nch_mac l=180n w=2u multi=1 nf=1
+    M3 (net12 net12 GND GND) nch_mac l=180n w=2u multi=1 nf=1
+    M1 (VOUT VOUT net12 GND) nch_mac l=180n w=2u multi=1 nf=1
+    M0 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1
+ends front_end_42_2_2015_REF_schematic
+// End of subcircuit definition.

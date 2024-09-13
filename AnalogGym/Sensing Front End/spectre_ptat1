@@ -1,0 +1,30 @@
+// Library name: spectre_test
+// Cell name: ptat_1
+// View name: schematic
+subckt ptat_1 GND VDD VOUT
+    M5 (VOUT VOUT GND GND) nch_mac l=220.0n w=13.1u multi=39 nf=1 sigma=1 \
+        sd=540.0n ad=6.288e-12 as=6.288e-12 pd=27.16u ps=27.16u \
+        nrd=0.0206107 nrs=0.0206107 sa=480.0n sb=480.0n sca=0 scb=0 scc=0 \
+        mismatchflag=1
+    M4 (VDD VOUT VOUT GND) nch_mac l=220.0n w=39.5u multi=98 nf=1 sigma=1 \
+        sd=540.0n ad=1.896e-11 as=1.896e-11 pd=79.96u ps=79.96u \
+        nrd=0.00683544 nrs=0.00683544 sa=480.0n sb=480.0n sca=0 scb=0 \
+        scc=0 mismatchflag=1
+    M3 (VOUT VOUT GND GND) nch_mac l=220.0n w=13.1u multi=39 nf=1 sigma=1 \
+        sd=540.0n ad=6.288e-12 as=6.288e-12 pd=27.16u ps=27.16u \
+        nrd=0.0206107 nrs=0.0206107 sa=480.0n sb=480.0n sca=0 scb=0 scc=0 \
+        mismatchflag=1
+    M2 (VDD VOUT VOUT GND) nch_mac l=220.0n w=39.5u multi=98 nf=1 sigma=1 \
+        sd=540.0n ad=1.896e-11 as=1.896e-11 pd=79.96u ps=79.96u \
+        nrd=0.00683544 nrs=0.00683544 sa=480.0n sb=480.0n sca=0 scb=0 \
+        scc=0 mismatchflag=1
+    M1 (VOUT VOUT GND GND) nch_mac l=220.0n w=13.1u multi=39 nf=1 sigma=1 \
+        sd=540.0n ad=6.288e-12 as=6.288e-12 pd=27.16u ps=27.16u \
+        nrd=0.0206107 nrs=0.0206107 sa=480.0n sb=480.0n sca=0 scb=0 scc=0 \
+        mismatchflag=1
+    M0 (VDD VOUT VOUT GND) nch_mac l=220.0n w=39.5u multi=98 nf=1 sigma=1 \
+        sd=540.0n ad=1.896e-11 as=1.896e-11 pd=79.96u ps=79.96u \
+        nrd=0.00683544 nrs=0.00683544 sa=480.0n sb=480.0n sca=0 scb=0 \
+        scc=0 mismatchflag=1
+ends ptat_1
+// End of subcircuit definition.

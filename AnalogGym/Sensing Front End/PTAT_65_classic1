@@ -1,0 +1,17 @@
+// Library name: sensor
+// Cell name: PTAT_65_classic1
+// View name: schematic
+subckt PTAT_65_classic1 GND VDD VOUT
+M1 (net3 net3 GND GND) nch_mac l=60n w=200n multi=1 nf=1 sigma=1 sd=200n \
+        ad=3.5e-14 as=3.5e-14 pd=750n ps=750n nrd=0.5 nrs=0.5 sa=175n \
+        sb=175n sca=0 scb=0 scc=0 mismatchflag=1
+M0 (VOUT net3 GND GND) nch_mac l=60n w=200n multi=1 nf=1 sigma=1 sd=200n \
+        ad=3.5e-14 as=3.5e-14 pd=750n ps=750n nrd=0.5 nrs=0.5 sa=175n \
+        sb=175n sca=0 scb=0 scc=0 mismatchflag=1
+M3 (VOUT VOUT VDD VDD) pch_mac l=60n w=200n multi=1 nf=1 sigma=1 sd=200n \
+        ad=3.5e-14 as=3.5e-14 pd=750n ps=750n nrd=0.5 nrs=0.5 sa=175n \
+        sb=175n sca=0 scb=0 scc=0 mismatchflag=1
+M4 (net3 VOUT VDD VDD) pch_mac l=60n w=200n multi=1 nf=1 sigma=1 sd=200n \
+        ad=3.5e-14 as=3.5e-14 pd=750n ps=750n nrd=0.5 nrs=0.5 sa=175n \
+        sb=175n sca=0 scb=0 scc=0 mismatchflag=1
+ends PTAT_65_classic1

@@ -1,0 +1,505 @@
+
+// Library name: front_end
+// Cell name: 11_6T
+// View name: schematic
+subckt front_end_11_6T_schematic GND VDD VOUT
+    M5 (VOUT net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M4 (VDD net2 VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (GND GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net2 net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VDD net2 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_11_6T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 31_3T
+// View name: schematic
+subckt front_end_31_3T_schematic GND VDD VOUT
+    M2 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net13 VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD net13 net13 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_31_3T_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 41_2T_1
+// View name: schematic
+subckt front_end_41_2T_1_schematic GND VDD VOUT
+    M0 (GND GND VOUT VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_41_2T_1_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 41_2T_2
+// View name: schematic
+subckt front_end_41_2T_2_schematic GND VDD VOUT
+    M1 (VOUT GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VOUT VOUT VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_41_2T_2_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 41_2T_3
+// View name: schematic
+subckt front_end_41_2T_3_schematic GND VDD VOUT
+    M1 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_41_2T_3_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 42_1_2015_REF
+// View name: schematic
+subckt front_end_42_1_2015_REF_schematic GND VDD VOUT
+    M2 (net1 net1 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VOUT VOUT net1 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_42_1_2015_REF_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 42_2_2015_REF
+// View name: schematic
+subckt front_end_42_2_2015_REF_schematic GND VDD VOUT
+    M4 (VDD net12 net12 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (net12 net12 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VOUT VOUT net12 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_42_2_2015_REF_schematic
+// End of subcircuit definition.
+
+//REFRENCE
+// Library name: front_end
+// Cell name: 4_2pmos
+// View name: schematic
+subckt front_end_4_2pmos_schematic GND VDD VOUT
+    M1 (GND GND VOUT VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_4_2pmos_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 4_2pmos_b
+// View name: schematic
+subckt front_end_4_2pmos_b_schematic GND VDD VOUT
+    M1 (GND GND VOUT VOUT) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_4_2pmos_b_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 33_3T
+// View name: schematic
+subckt front_end_33_3T_schematic GND VDD VOUT
+    M2 (VOUT net9 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net9 net9 VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD GND net9 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_33_3T_schematic
+// End of subcircuit definition.
+//实际上M0是零阈值晶体管，下面是它的变例
+
+// Library name: front_end
+// Cell name: 33_4T
+// View name: schematic
+subckt front_end_33_4T_schematic GND VDD VOUT
+    M3 (VOUT net10 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net10 net10 VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net14 GND net10 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD GND net14 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_33_4T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 28_4T
+// View name: schematic
+subckt front_end_28_4T_schematic GND VDD VOUT
+    M1 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (net12 net12 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (VOUT net12 net12 VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net12 VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_28_4T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 28_4T
+// View name: schematic
+subckt front_end_28_4T_schematic GND VDD VOUT
+    M1 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (net12 net12 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (VOUT net12 net12 net12) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net12 VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_28_4T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 28_4T_VA
+// View name: schematic
+subckt front_end_28_4T_VA_schematic GND VDD VOUT
+    M1 (net49 net49 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (net49 VOUT VOUT VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_28_4T_VA_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 25_6T
+// View name: schematic
+subckt front_end_25_6T_schematic GND VDD VOUT
+    M5 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M4 (net19 GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (net13 GND VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net13 net13 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD GND net13 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD GND net19 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_25_6T_schematic
+// End of subcircuit definition.
+
+//实际上M3是ZVT
+//without self regulated  circuit
+// Library name: front_end
+// Cell name: 24_2T
+// View name: schematic
+subckt front_end_24_2T_schematic GND VDD VOUT
+    M3 (VDD GND VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M4 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_24_2T_schematic
+// End of subcircuit definition.
+
+//实际上M3是ZVT	
+//with self regulated  circuit
+// Library name: front_end
+// Cell name: 24_6T
+// View name: schematic
+subckt front_end_24_6T_schematic GND VDD VOUT
+    M2 (GND GND net13 VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net13 net21 VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (net20 net21 VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M5 (net20 VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M4 (VOUT VOUT GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (net13 GND VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_24_6T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 22_2T
+// View name: schematic
+subckt front_end_22_2T_schematic GND VDD VOUT
+    M0 (GND GND VOUT VOUT) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_22_2T_schematic
+// End of subcircuit definition.
+
+//实际M2管的衬底接输出
+//减小电源电压的影响
+// Library name: front_end
+// Cell name: 22_3T
+// View name: schematic
+subckt front_end_22_3T_schematic GND VDD VOUT
+    M1 (net15 VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD net15 net15 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (GND GND VOUT VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_22_3T_schematic
+// End of subcircuit definition.
+
+// Library name: front_end
+// Cell name: 22
+// View name: schematic
+subckt front_end_22_schematic GND VDD VOUT
+    M1 (net15 VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD net15 net15 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (GND GND VOUT VOUT) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_22_schematic
+// End of subcircuit definition.
+
+//013为HVT
+// Library name: front_end
+// Cell name: 11_7T
+// View name: schematic
+subckt front_end_11_7T_schematic GND VDD VOUT
+    M3 (net20 net11 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (net11 net11 net20 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net10 net11 net22 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (net22 net20 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M6 (VOUT net10 VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M5 (net11 net10 VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M4 (net10 net10 VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_11_7T_schematic
+// End of subcircuit definition.
+
+//M1 M2的衬底接相应的输出端
+// Library name: front_end
+// Cell name: 43_4T_1
+// View name: schematic
+subckt front_end_43_4T_1_schematic GND VDD VOUT
+    M3 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (VOUT net8 net8 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net8 GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD net8 net8 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_43_4T_1_schematic
+// End of subcircuit definition.
+
+
+//M1 M2的衬底接相应的输出端
+// Library name: front_end
+// Cell name: 43_4T_2
+// View name: schematic
+subckt front_end_43_4T_2_schematic GND VDD VOUT
+    M3 (net10 VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (VOUT GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (net10 GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD net10 net10 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_43_4T_2_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 20_4T
+// View name: schematic 衬底接电源线
+subckt front_end_20_4T_schematic GND VDD VOUT
+    M3 (GND GND VOUT VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (GND VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_20_4T_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 20_4T_body
+// View name: schematic
+subckt front_end_20_4T_body_schematic GND VDD VOUT
+    M1 (VOUT VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (GND GND VOUT VOUT) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (GND VDD VDD VDD) pch_mac l=180n w=2u multi=1 nf=1 sigma=1 sd=540n \
+        ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 \
+        sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_20_4T_body_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 17_4T_b
+// View name: schematic  衬底接电源线，理论上M0 M1尺寸相同，M2 M3同理
+// 温度系数可以通过下管的串联值来调整，这里设为2
+subckt front_end_17_4T_b_schematic GND VDD VOUT
+    M0 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M3 (net28 net28 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (VOUT VOUT net28 GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD VOUT VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_17_4T_b_schematic
+// End of subcircuit definition.
+
+
+// Library name: front_end
+// Cell name: 17_4T
+// View name: schematic
+subckt front_end_17_4T_schematic GND VDD VOUT
+    M3 (net14 net14 GND GND) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M2 (VOUT VOUT net14 net14) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M1 (VDD VOUT VOUT VOUT) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+    M0 (VDD VOUT VOUT VOUT) nch_mac l=180n w=2u multi=1 nf=1 sigma=1 \
+        sd=540n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 \
+        nrs=0.135 sa=480n sb=480n sca=0 scb=0 scc=0 mismatchflag=1
+ends front_end_17_4T_schematic
+// End of subcircuit definition.

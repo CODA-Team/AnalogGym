@@ -1,0 +1,12 @@
+// Library name: front_end
+// Cell name: 11_6T
+// View name: schematic
+subckt front_end_11_6T_schematic GND VDD VOUT
+    M5 (VOUT net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1 
+    M4 (VDD net2 VOUT GND) nch_mac l=180n w=2u multi=1 nf=1 
+    M3 (GND GND GND GND) nch_mac l=180n w=2u multi=1 nf=1 
+    M2 (net2 net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1
+    M1 (VDD net2 GND GND) nch_mac l=180n w=2u multi=1 nf=1
+    M0 (VDD VDD net2 GND) nch_mac l=180n w=2u multi=1 nf=1
+ends front_end_11_6T_schematic
+// End of subcircuit definition.
