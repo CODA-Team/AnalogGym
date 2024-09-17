@@ -81,7 +81,7 @@ Two performance extraction scripts are provided for reference: [AMP](https://git
 <h3 id="Additional_Resources">Additional Resources</h3>
 
 - For a detailed tutorial on using Ngspice, please refer to [this link](https://ngspice.sourceforge.io/tutorials.html).
-- Detailed documentation can be found in [doc](https://coda-team.github.io/AnalogGym/)
+- Detailed documentation can be found in [doc](https://coda-team.github.io/AnalogGym/), and our paper can be found [here](https://arxiv.org/abs/2409.08534).
 
 
 ## **Citation**
@@ -92,6 +92,6 @@ Please cite us if you find AnalogGym useful.
 
 ## **Contact**
 
-If you have any questions, are seeking collaboration, or would like to contribute circuit designs, please contact us at [j.t.li@i4ai.org](mailto:j.t.li@i4ai.org).
+If you have any questions, are seeking collaboration, or would like to contribute circuit designs, please get in touch with us at [j.t.li@i4ai.org](mailto:j.t.li@i4ai.org).
 
 <img src="./docs/images/logos/4school.png" alt="school_logo" width="90%"/>
