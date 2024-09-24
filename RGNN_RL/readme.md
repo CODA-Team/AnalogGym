@@ -23,6 +23,15 @@ For the simulation setup and execution, you can check the following scripts:
 
 These scripts provide detailed examples of how the simulations are run, including the optimization process for each circuit.
 
+
+### Extraction of Device Parameters for `OP` Analysis
+
+To automate the extraction of all relevant device parameters during the `OP` analysis, we provide a script called `dev_params.py`. 
+
+Running this script will generate a file named `AMP_NMCF_dev_params.spice`. 
+
+Once the `OP` analysis is completed, all device parameters will be saved in a file called `AMP_NMCF_op`.
+
 ## File Descriptions
 
 Here is a breakdown of key files and directories:
