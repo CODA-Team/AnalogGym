@@ -5,8 +5,9 @@
 ## Initialization
 To normalize the transistor attributes used in the observation matrix, you'll need the mean and standard deviation. 
 These values can be obtained by running initial experiments with the class method `_init_random_sim`. 
+
 For demonstration, we have already provided this data in the file `AMP_NMCF_op_mean_std.json`. 
-However, when switching to a different circuit, you will need to generate this file yourself. 
+When switching to a different circuit, you will need to generate this file yourself. 
 To do so, simply set the parameter `'run_initial=True'` at the indicated location in [`main_AMP.py`](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/main_AMP.py#L32).
 
 
