@@ -55,3 +55,4 @@ There are three ways to run the simulation:
    ```
    to start the simulation.
 
+The `torch-1.13.1+cpu` file is quite large, so you'll need to download it manually from this link: [PyTorch 1.13.1 Files](https://pypi.org/project/torch/1.13.1/#files). 
