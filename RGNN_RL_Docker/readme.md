@@ -1,4 +1,4 @@
-## Running the Simulation
+## Run Settings
 
 There are three ways to run the simulation:
 
@@ -27,7 +27,7 @@ There are three ways to run the simulation:
    ```
    After pulling, refer to the steps in Method 1 to create a container and run the simulation.
 
-3. **Running Locally for Precise Simulation Results**  
+3. **Running Locally**  
    Docker might not resolve ngspice version issues, so for precise results, you can run the simulation locally. First, create a conda virtual environment and install the required packages:
    ```bash
    conda install -c conda-forge ngspice
