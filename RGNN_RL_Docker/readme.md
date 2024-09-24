@@ -1,4 +1,5 @@
 ## Run Settings
+You can refer to the following link for the algorithm runtime [configuration](https://github.com/CODA-Team/AnalogGym/blob/main/RGNN_RL/readme.md).
 
 There are three ways to run the simulation:
 
