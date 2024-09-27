@@ -1,6 +1,6 @@
 # **AnalogGym**
 ![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
-![CI](https://github.com/CODA-Team/AnalogGym/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/CODA-Team/AnalogGym/blob/main/.github/workflows/jekyll-gh-pages.yml)
 ![caravan_build.yml](https://github.com/CODA-Team/AnalogGym/actions/workflows/caravan_build.yml/badge.svg)
 ## **About AnalogGym**
 
