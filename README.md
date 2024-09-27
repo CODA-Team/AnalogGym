@@ -1,5 +1,5 @@
 # **AnalogGym**
-
+![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
 ## **About AnalogGym**
 
 This repository is the analog circuit synthesis testing suite, **AnalogGym**.
