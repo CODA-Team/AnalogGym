@@ -15,7 +15,7 @@ Test OpAmp ACDC
 *.include ../mosfet_model/sky130_pdk/libs.tech/ngspice/corners/tt/specialized_cells.spice
 
 
-.PARAM supply_voltage = 1.98
+.PARAM supply_voltage = 1.8
 .PARAM VCM_ratio = 0.25
 .PARAM PARAM_CLOAD =500.00p 
 
